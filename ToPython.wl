@@ -142,7 +142,7 @@ ToPython[expression_, OptionsPattern[]] :=
              -> "gamma", "\[Delta]" -> "delta", "\[Epsilon]" -> "epsilon", "\[CurlyEpsilon]"
              -> "curlyepsilon", "\[Zeta]" -> "zeta", "\[Eta]" -> "eta", "\[Theta]"
              -> "theta", "\[Iota]" -> "iota", "\[Kappa]" -> "kappa", "\[Lambda]" 
-            -> "lambda", "\[Mu]" -> "mu", "\[Nu]" -> "nu", "\[Xi]" -> "xi", "\[Omicron]"
+            -> "lamb", "\[Mu]" -> "mu", "\[Nu]" -> "nu", "\[Xi]" -> "xi", "\[Omicron]"
              -> "omicron", "\[Pi]" -> "pi", "\[Rho]" -> "rho", "\[FinalSigma]" ->
              "finalsigma", "\[Sigma]" -> "sigma", "\[Tau]" -> "tau", "\[Upsilon]"
              -> "upsilon", "\[CurlyPhi]" -> "curlyphi", "\[Chi]" -> "chi", "\[Phi]"
@@ -157,12 +157,14 @@ ToPython[expression_, OptionsPattern[]] :=
              -> "Tau", "\[CapitalUpsilon]" -> "Upsilon", "\[CapitalPhi]" -> "CurlyPhi",
              "\[CapitalChi]" -> "Chi", "\[CapitalPsi]" -> "Psi", "\[CapitalOmega]"
              -> "Omega"};
+        plusminusrule = {"+ -" -> "-"};
         (* Everything else *)
         PythonForm[h_[args__]] := np <> ToLowerCase[PythonForm[h]] <>
              "(" <> PythonForm[args] <> ")";
         PythonForm[allOther_] := StringReplace[ToString[allOther, FortranForm
             ], greekrule];
-        result = StringReplace[PythonForm[expression], greekrule];
+        result = StringReplace[PythonForm[expression], greekrule ~ Join
+             ~ plusminusrule];
         (* Copy results to clipboard *)
         If[copy,
             CopyToClipboard[result]
