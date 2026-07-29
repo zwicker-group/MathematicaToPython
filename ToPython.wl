@@ -98,8 +98,8 @@ ToPython[expression_, OptionsPattern[]] :=
             a, b];
         (* Some special functions *)
         PythonForm[Arg[a_]] := format["numpy.angle(``)", a];
-        PythonForm[SphericalHarmonicY[l_, m_, a_, b_]] := format["special.sph_harm(``, ``, (``) % (2 * numpy.pi), (``) % numpy.pi)",
-             m, l, b, a];
+        PythonForm[SphericalHarmonicY[l_, m_, a_, b_]] := format["special.sph_harm_y(``, ``, (``) % (2 * numpy.pi), (``) % numpy.pi)",
+             l, m, a, b];
         PythonForm[Gamma[a_]] := format["special.gamma(``)", a];
         PythonForm[Gamma[a_, b_]] := format["special.gamma(`1`) * special.gammaincc(`1`, `2`)",
              a, b];
@@ -126,6 +126,9 @@ ToPython[expression_, OptionsPattern[]] :=
         PythonForm[Csch[a_]] := format["1 / numpy.sinh(``)", a];
         PythonForm[Sech[a_]] := format["1 / numpy.cosh(``)", a];
         PythonForm[Coth[a_]] := format["1 / numpy.tanh(``)", a];
+        (* Handle rules *)
+        PythonForm[rule: (_Symbol -> _)] := ToString[rule[[1]]]<>" = "<>PythonForm[rule[[2]]]<>"\n";
+        PythonForm[rules: {(_Symbol -> _) ..}] := StringJoin@Map[PythonForm,rules];
         (* Handling arrays *)
         PythonForm[a_NumericArray] := np <> "array(" <> StringReplace[
             ToString @ Normal @ a, {"{" -> "[", "}" -> "]"}] <> ")";

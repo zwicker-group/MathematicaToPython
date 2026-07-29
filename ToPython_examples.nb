@@ -1,952 +1,1818 @@
 (* Content-type: application/vnd.wolfram.mathematica *)
 
 (*** Wolfram Notebook File ***)
-
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.0' *)
+(* CreatedBy='Wolfram 15.0' *)
 
 (*CacheID: 234*)
-
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     76949,       1652]
-NotebookOptionsPosition[     72110,       1573]
-NotebookOutlinePosition[     72506,       1589]
-CellTagsIndexPosition[     72463,       1586]
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     83067,       1810]
+NotebookOptionsPosition[     77674,       1722]
+NotebookOutlinePosition[     78066,       1738]
+CellTagsIndexPosition[     78023,       1735]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"loads", " ", "the", " ", "package"}], " ", "-", " ", 
+    RowBox[{"after", " ", "installation"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Get", "@", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<ToPython.wl\>\""}], 
+     "}"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.70181767476367*^9, 3.701817694205203*^9}, {
+  3.7018181976937943`*^9, 3.701818211998588*^9}, {3.817007877025469*^9, 
+  3.81700790447239*^9}, {3.8172214865707483`*^9, 3.81722149743857*^9}},
+ CellLabel->
+  "In[300]:=",ExpressionUUID->"ee6242fe-5738-42d7-927d-12c3be9f45f8"],
 
-Notebook[
-  {
-    Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{RowBox[{"loads", " ", 
-      "the", " ", "package"}], " ", "-", " ", RowBox[{"after", " ", "installation"
-      }]}], "*)"}], "\[IndentingNewLine]", RowBox[{"Get", "@", RowBox[{"FileNameJoin",
-       "[", RowBox[{"{", RowBox[{RowBox[{"NotebookDirectory", "[", "]"}], ",",
-       "\"\<ToPython.wl\>\""}], "}"}], "]"}]}]}]], "Input", CellChangeTimes
-       -> {{3.70181767476367*^9, 3.701817694205203*^9}, {3.7018181976937943`*^9,
-       3.701818211998588*^9}, {3.817007877025469*^9, 3.81700790447239*^9}, 
-      {3.8172214865707483`*^9, 3.81722149743857*^9}}, CellLabel -> "In[47]:=",
-       ExpressionUUID -> "ee6242fe-5738-42d7-927d-12c3be9f45f8"]
-    ,
-    Cell[
-      CellGroupData[
-        {
-          Cell[BoxData[RowBox[{"?", "ToPython"}]], "Input", CellChangeTimes
-             -> {{3.70181815383568*^9, 3.7018181578773003`*^9}, 3.701818214459565*^9,
-             {3.817118303280854*^9, 3.817118304890544*^9}, {3.8171204416196833`*^9,
-             3.8171204422649813`*^9}, {3.846041124797001*^9, 3.846041134384152*^9
-            }}, CellLabel -> "In[48]:=", ExpressionUUID -> "e8858397-83ae-4bb9-9a33-1b677626ef0c"
-            ]
-          ,
-          Cell[BoxData[TemplateBox[{"StringForm", "string", "\"String expected at position StandardForm[Short[Shallow[HoldForm[1], {10, 50}], 5]] in StandardForm[Short[Shallow[HoldForm[StringForm[Private`s, Sequence @@ Private`PythonForm /@ {Private`args}]], {10, 50}], 5]].\"",
-             2, 48, 1, 27837000086921606047, "Local"}, "MessageTemplate"]], "Message",
-             "MSG", CellChangeTimes -> {{3.846041131173876*^9, 3.8460411348863487`*^9
-            }, 3.846041288298971*^9, 3.846041712287074*^9, {3.84604174243005*^9, 
-            3.846041755722417*^9}, 3.8460418725700493`*^9, 3.84604234575531*^9, 3.8464081244260674`*^9,
-             3.846408252278989*^9}, CellLabel -> "During evaluation of In[48]:=",
-             ExpressionUUID -> "8547ffc5-678a-4925-92f6-8ad83246e2a7"]
-          ,
-          Cell[
-            BoxData[
-              InterpretationBox[
-                StyleBox[FrameBox[DynamicModuleBox[{System`InformationDump`open$$
-                   = False, System`InformationDump`mouseOver$$ = False}, PaneSelectorBox[
-                  {True -> TagBox[GridBox[{{ItemBox[PaneBox[StyleBox["\<\" Symbol\"\>",
-                   "InformationTitleText", StripOnInput -> False, BaseStyle -> None], FrameMargins
-                   -> {{4, 0}, {-1, 1}}], BaseStyle -> "InformationTitleBackground", StripOnInput
-                   -> False], ItemBox["\<\"\"\>", BaseStyle -> "InformationTitleBackground",
-                   StripOnInput -> False]}, {ItemBox[PaneBox[StyleBox["\<\"ToPython[expression, NumpyPrefix->\\\"np\\\", Copy->False]\\n\\tconverts Mathematica expression to a Numpy compatible expression. Because Numpy can\\n\\tbe imported in several ways, you can specify the name of the numpy module using the\\n    NumpyPrefix option. The additional option Copy allows you to copy the result to the clipboard\"\>",
-                   "InformationUsageText", StripOnInput -> False, LineSpacing -> {1.5, 
-                  1.5, 3.}], FrameMargins -> {{10, 10}, {8, 10}}], BaseStyle -> "InformationUsageSubtitleBackground",
-                   StripOnInput -> False], ItemBox["\<\"\"\>", BaseStyle -> "InformationUsageSubtitleBackground",
-                   StripOnInput -> False]}, {PaneBox[GridBox[{{DynamicModuleBox[{System`InformationDump`open$$
-                   = {False, False, False, False, False, False, False, False, False, False,
-                   False, False}}, StyleBox[GridBox[{{TagBox[TooltipBox[StyleBox["\<\" Definitions\"\>",
-                   "InformationRowLabel", StripOnInput -> False], "\"Definitions\"", TooltipStyle
-                   -> "TextStyling"], Annotation[#, "Definitions", "Tooltip"]&], GridBox[
-                  {{RowBox[{RowBox[{"ToPython", "[", RowBox[{"Private`expression_", ",",
-                   RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", RowBox[{"Module",
-                   "[", RowBox[{RowBox[{"{", RowBox[{RowBox[{"Private`numpyprefix", "=",
-                   RowBox[{"OptionValue", "[", "Private`NumpyPrefix", "]"}]}], ",", RowBox[
-                  {"Private`copy", "=", RowBox[{"OptionValue", "[", "Private`Copy", "]"
-                  }]}], ",", "Private`result", ",", "Private`greekrule", ",", "Private`format",
-                   ",", "Private`PythonForm", ",", "Private`np", ",", "Private`br", ",",
-                   "Private`brackets", ",", "Private`a", ",", "Private`b", ",", "Private`l",
-                   ",", "Private`m", ",", "Private`args"}], "}"}], ",", RowBox[{RowBox[
-                  {"If", "[", RowBox[{RowBox[{"Private`numpyprefix", "\[Equal]", "\<\"\"\>"
-                  }], ",", RowBox[{"Private`np", "=", "Private`numpyprefix"}], ",", RowBox[
-                  {"Private`np", "=", RowBox[{"Private`numpyprefix", "<>", "\<\".\"\>"}
-                  ]}]}], "]"}], ";", RowBox[{RowBox[{"Private`format", "[", RowBox[{"Private`pattern_String",
-                   ",", "Private`args__"}], "]"}], ":=", RowBox[{"Module", "[", RowBox[
-                  {RowBox[{"{", "Private`s", "}"}], ",", RowBox[{RowBox[{"Private`s", "=",
-                   RowBox[{"StringReplace", "[", RowBox[{"Private`pattern", ",", RowBox[
-                  {"\<\"numpy.\"\>", "\[Rule]", "Private`np"}]}], "]"}]}], ";", RowBox[
-                  {"ToString", "[", RowBox[{"StringForm", "[", RowBox[{"Private`s", ",",
-                   RowBox[{"Sequence", "@@", RowBox[{"Private`PythonForm", "/@", RowBox[
-                  {"{", "Private`args", "}"}]}]}]}], "]"}], "]"}]}]}], "]"}]}], ";", RowBox[
-                  {RowBox[{"Private`br", "[", "Private`a_", "]"}], ":=", RowBox[{"If", 
-                  "[", RowBox[{RowBox[{RowBox[{"AtomQ", "[", "Private`a", "]"}], "||", 
-                  RowBox[{"MemberQ", "[", RowBox[{"Private`singleFunctions", ",", RowBox[
-                  {"Head", "[", "Private`a", "]"}]}], "]"}]}], ",", "Private`a", ",", RowBox[
-                  {"Private`brackets", "[", "Private`a", "]"}]}], "]"}]}], ";", RowBox[
-                  {RowBox[{"Private`PythonForm", "[", RowBox[{"Private`brackets", "[", 
-                  "Private`a_", "]"}], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[
-                  {"\<\"(``)\"\>", ",", "Private`a"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"-", "Private`a_"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"-``\"\>", ",", RowBox[{"Private`br", "[", "Private`a",
-                   "]"}]}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[", SuperscriptBox[
-                  "Private`a_", RowBox[{"Rational", "[", RowBox[{"1", ",", "2"}], "]"}]
-                  ], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"numpy.sqrt(``)\"\>",
-                   ",", "Private`a"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", FractionBox["Private`a_", "Private`b_"], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"`` / ``\"\>", ",", RowBox[{"Private`br", "[", "Private`a",
-                   "]"}], ",", RowBox[{"Private`br", "[", "Private`b", "]"}]}], "]"}]}],
-                   ";", RowBox[{StyleBox[RowBox[{"ToPython", "::", "hasDerivative"}], "MessageName"
-                  ], "=", "\<\"Dervatives are not supported\"\>"}], ";", RowBox[{RowBox[
-                  {"Private`PythonForm", "[", RowBox[{"Derivative", "[", "___", "]"}], 
-                  "]"}], ":=", RowBox[{"(", RowBox[{RowBox[{"Message", "[", StyleBox[RowBox[
-                  {"ToPython", "::", "hasDerivative"}], "MessageName"], "]"}], ";", RowBox[
-                  {"Abort", "[", "]"}]}], ")"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"Rational", "[", RowBox[{"Private`a_", ",", "Private`b_"
-                  }], "]"}], "]"}], ":=", RowBox[{"ToString", "[", RowBox[{RowBox[{"N",
-                   "[", RowBox[{FractionBox["Private`a", "Private`b"], ",", "$MachinePrecision"
-                  }], "]"}], ",", "FortranForm"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", "Private`a_Rational", "]"}], ":=", RowBox[{"ToString", "[", RowBox[
-                  {RowBox[{"N", "[", RowBox[{"Private`a", ",", "$MachinePrecision"}], "]"
-                  }], ",", "FortranForm"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"Complex", "[", RowBox[{"Private`a_", ",", "Private`b_"
-                  }], "]"}], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"complex(``, ``)\"\>",
-                   ",", "Private`a", ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{
-                  "Private`PythonForm", "[", RowBox[{"Private`a_", " ", "Private`b__"}],
-                   "]"}], ":=", RowBox[{"Module", "[", RowBox[{RowBox[{"{", RowBox[{"Private`fs",
-                   ",", RowBox[{"Private`bl", "=", RowBox[{"{", "Private`b", "}"}]}]}],
-                   "}"}], ",", RowBox[{RowBox[{"Private`fs", "=", RowBox[{"StringRiffle",
-                   "[", RowBox[{RowBox[{"ConstantArray", "[", RowBox[{"\<\"``\"\>", ",",
-                   RowBox[{"1", "+", RowBox[{"Length", "[", "Private`bl", "]"}]}]}], "]"
-                  }], ",", "\<\" * \"\>"}], "]"}]}], ";", RowBox[{"Private`format", "[",
-                   RowBox[{"Private`fs", ",", RowBox[{"Private`br", "[", "Private`a", "]"
-                  }], ",", RowBox[{"Sequence", "@@", RowBox[{"Private`br", "/@", "Private`bl"
-                  }]}]}], "]"}]}]}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"Private`a_", "+", "Private`b_"}], "]"}], ":=", RowBox[
-                  {"Private`format", "[", RowBox[{"\<\"`` + ``\"\>", ",", "Private`a", 
-                  ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", SuperscriptBox["Private`a_", "Private`b_"], "]"}], ":=", RowBox[
-                  {"Private`format", "[", RowBox[{"\<\"`` ** ``\"\>", ",", RowBox[{"Private`br",
-                   "[", "Private`a", "]"}], ",", RowBox[{"Private`br", "[", "Private`b",
-                   "]"}]}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[
-                  {"Exp", "[", "Private`a_", "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"numpy.exp(``)\"\>", ",", "Private`a"}], "]"}]}], ";",
-                   RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"Max", "[", RowBox[
-                  {"Private`a_", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"numpy.maximum(`1`, `2`)\"\>", ",", "Private`a", ",",
-                   "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[",
-                   RowBox[{"Min", "[", RowBox[{"Private`a_", ",", "Private`b_"}], "]"}],
-                   "]"}], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"numpy.minimum(`1`, `2`)\"\>",
-                   ",", "Private`a", ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{
-                  "Private`PythonForm", "[", RowBox[{"Arg", "[", "Private`a_", "]"}], "]"
-                  }], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"numpy.angle(``)\"\>",
-                   ",", "Private`a"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"SphericalHarmonicY", "[", RowBox[{"Private`l_", ",", "Private`m_",
-                   ",", "Private`a_", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{
-                  "Private`format", "[", RowBox[{"\<\"special.sph_harm(``, ``, (``) % (2 * numpy.pi), (``) % numpy.pi)\"\>",
-                   ",", "Private`m", ",", "Private`l", ",", "Private`b", ",", "Private`a"
-                  }], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{
-                  "Gamma", "[", "Private`a_", "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.gamma(``)\"\>", ",", "Private`a"}], "]"}]}
-                  ], ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"Gamma", "[",
-                   RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[
-                  {"Private`format", "[", RowBox[{"\<\"special.gamma(`1`) * special.gammaincc(`1`, `2`)\"\>",
-                   ",", "Private`a", ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{
-                  "Private`PythonForm", "[", RowBox[{"BesselI", "[", RowBox[{"0", ",", 
-                  "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[
-                  {"\<\"special.i0(``)\"\>", ",", "Private`b"}], "]"}]}], ";", RowBox[{
-                  RowBox[{"Private`PythonForm", "[", RowBox[{"BesselJ", "[", RowBox[{"0",
-                   ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format", "[",
-                   RowBox[{"\<\"special.j0(``)\"\>", ",", "Private`b"}], "]"}]}], ";", 
-                  RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselK", "[", RowBox[
-                  {"0", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.k0(``)\"\>", ",", "Private`b"}], "]"}]}], 
-                  ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselY", "[",
-                   RowBox[{"0", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.y0(``)\"\>", ",", "Private`b"}], "]"}]}], 
-                  ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselI", "[",
-                   RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.i1(``)\"\>", ",", "Private`b"}], "]"}]}], 
-                  ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselJ", "[",
-                   RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.j1(``)\"\>", ",", "Private`b"}], "]"}]}], 
-                  ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselK", "[",
-                   RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.k1(``)\"\>", ",", "Private`b"}], "]"}]}], 
-                  ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselY", "[",
-                   RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"special.y1(``)\"\>", ",", "Private`b"}], "]"}]}], 
-                  ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"BesselI", "[",
-                   RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[
-                  {"Private`format", "[", RowBox[{"\<\"special.iv(``, ``)\"\>", ",", "Private`a",
-                   ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"BesselJ", "[", RowBox[{"Private`a_", ",", "Private`b_"
-                  }], "]"}], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"special.jv(``, ``)\"\>",
-                   ",", "Private`a", ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{
-                  "Private`PythonForm", "[", RowBox[{"BesselK", "[", RowBox[{"Private`a_",
-                   ",", "Private`b_"}], "]"}], "]"}], ":=", RowBox[{"Private`format", "[",
-                   RowBox[{"\<\"special.kn(``, ``)\"\>", ",", "Private`a", ",", "Private`b"
-                  }], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{
-                  "BesselY", "[", RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"
-                  }], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"special.yn(``, ``)\"\>",
-                   ",", "Private`a", ",", "Private`b"}], "]"}]}], ";", RowBox[{RowBox[{
-                  "Private`PythonForm", "[", RowBox[{"Csc", "[", "Private`a_", "]"}], "]"
-                  }], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"1 / numpy.sin(``)\"\>",
-                   ",", "Private`a"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"Sec", "[", "Private`a_", "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"1 / numpy.cos(``)\"\>", ",", "Private`a"}], "]"}]}
-                  ], ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{"Cot", "[",
-                   "Private`a_", "]"}], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[
-                  {"\<\"1 / numpy.tan(``)\"\>", ",", "Private`a"}], "]"}]}], ";", RowBox[
-                  {RowBox[{"Private`PythonForm", "[", RowBox[{"Csch", "[", "Private`a_",
-                   "]"}], "]"}], ":=", RowBox[{"Private`format", "[", RowBox[{"\<\"1 / numpy.sinh(``)\"\>",
-                   ",", "Private`a"}], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"Sech", "[", "Private`a_", "]"}], "]"}], ":=", RowBox[{
-                  "Private`format", "[", RowBox[{"\<\"1 / numpy.cosh(``)\"\>", ",", "Private`a"
-                  }], "]"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[", RowBox[{
-                  "Coth", "[", "Private`a_", "]"}], "]"}], ":=", RowBox[{"Private`format",
-                   "[", RowBox[{"\<\"1 / numpy.tanh(``)\"\>", ",", "Private`a"}], "]"}]
-                  }], ";", RowBox[{RowBox[{"Private`PythonForm", "[", "Private`a_NumericArray",
-                   "]"}], ":=", RowBox[{"Private`np", "<>", "\<\"array(\"\>", "<>", RowBox[
-                  {"StringReplace", "[", RowBox[{RowBox[{"ToString", "[", RowBox[{"Normal",
-                   "[", "Private`a", "]"}], "]"}], ",", RowBox[{"{", RowBox[{RowBox[{"\<\"{\"\>",
-                   "\[Rule]", "\<\"[\"\>"}], ",", RowBox[{"\<\"}\"\>", "\[Rule]", "\<\"]\"\>"
-                  }]}], "}"}]}], "]"}], "<>", "\<\")\"\>"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"{", "Private`args__", "}"}], "]"}], ":=", RowBox[{"Private`np",
-                   "<>", "\<\"array([\"\>", "<>", RowBox[{"StringRiffle", "[", RowBox[{
-                  RowBox[{"Private`PythonForm", "/@", RowBox[{"{", "Private`args", "}"}
-                  ]}], ",", "\<\", \"\>"}], "]"}], "<>", "\<\"])\"\>"}]}], ";", RowBox[
-                  {RowBox[{"Private`PythonForm", "[", "\[Pi]", "]"}], "=", RowBox[{"Private`np",
-                   "<>", "\<\"pi\"\>"}]}], ";", RowBox[{RowBox[{"Private`PythonForm", "[",
-                   "\[ExponentialE]", "]"}], "=", RowBox[{"Private`np", "<>", "\<\"e\"\>"
-                  }]}], ";", RowBox[{"Private`greekrule", "=", RowBox[{"{", RowBox[{RowBox[
-                  {"\<\"\[Alpha]\"\>", "\[Rule]", "\<\"alpha\"\>"}], ",", RowBox[{"\<\"\[Beta]\"\>",
-                   "\[Rule]", "\<\"beta\"\>"}], ",", RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]",
-                   "\<\"gamma\"\>"}], ",", RowBox[{"\<\"\[Delta]\"\>", "\[Rule]", "\<\"delta\"\>"
-                  }], ",", RowBox[{"\<\"\[CurlyEpsilon]\"\>", "\[Rule]", "\<\"curlyepsilon\"\>"
-                  }], ",", RowBox[{"\<\"\[Zeta]\"\>", "\[Rule]", "\<\"zeta\"\>"}], ",",
-                   RowBox[{"\<\"\[Eta]\"\>", "\[Rule]", "\<\"eta\"\>"}], ",", RowBox[{"\<\"\[Theta]\"\>",
-                   "\[Rule]", "\<\"theta\"\>"}], ",", RowBox[{"\<\"\[Iota]\"\>", "\[Rule]",
-                   "\<\"iota\"\>"}], ",", RowBox[{"\<\"\[Kappa]\"\>", "\[Rule]", "\<\"kappa\"\>"
-                  }], ",", RowBox[{"\<\"\[Lambda]\"\>", "\[Rule]", "\<\"lambda\"\>"}], 
-                  ",", RowBox[{"\<\"\[Mu]\"\>", "\[Rule]", "\<\"mu\"\>"}], ",", RowBox[
-                  {"\<\"\[Nu]\"\>", "\[Rule]", "\<\"nu\"\>"}], ",", RowBox[{"\<\"\[Xi]\"\>",
-                   "\[Rule]", "\<\"xi\"\>"}], ",", RowBox[{"\<\"\[Omicron]\"\>", "\[Rule]",
-                   "\<\"omicron\"\>"}], ",", RowBox[{"\<\"\[Pi]\"\>", "\[Rule]", "\<\"pi\"\>"
-                  }], ",", RowBox[{"\<\"\[Rho]\"\>", "\[Rule]", "\<\"rho\"\>"}], ",", RowBox[
-                  {"\<\"\[FinalSigma]\"\>", "\[Rule]", "\<\"finalsigma\"\>"}], ",", RowBox[
-                  {"\<\"\[Sigma]\"\>", "\[Rule]", "\<\"sigma\"\>"}], ",", RowBox[{"\<\"\[Tau]\"\>",
-                   "\[Rule]", "\<\"tau\"\>"}], ",", RowBox[{"\<\"\[Upsilon]\"\>", "\[Rule]",
-                   "\<\"upsilon\"\>"}], ",", RowBox[{"\<\"\[CurlyPhi]\"\>", "\[Rule]", 
-                  "\<\"curlyphi\"\>"}], ",", RowBox[{"\<\"\[Chi]\"\>", "\[Rule]", "\<\"chi\"\>"
-                  }], ",", RowBox[{"\<\"\[Phi]\"\>", "\[Rule]", "\<\"phi\"\>"}], ",", RowBox[
-                  {"\<\"\[Psi]\"\>", "\[Rule]", "\<\"psi\"\>"}], ",", RowBox[{"\<\"\[Omega]\"\>",
-                   "\[Rule]", "\<\"omega\"\>"}], ",", RowBox[{"\<\"\[CapitalAlpha]\"\>",
-                   "\[Rule]", "\<\"Alpha\"\>"}], ",", RowBox[{"\<\"\[CapitalBeta]\"\>",
-                   "\[Rule]", "\<\"Beta\"\>"}], ",", RowBox[{"\<\"\[CapitalGamma]\"\>",
-                   "\[Rule]", "\<\"Gamma\"\>"}], ",", RowBox[{"\<\"\[CapitalDelta]\"\>",
-                   "\[Rule]", "\<\"Delta\"\>"}], ",", RowBox[{"\<\"\[CapitalEpsilon]\"\>",
-                   "\[Rule]", "\<\"CurlyEpsilon\"\>"}], ",", RowBox[{"\<\"\[CapitalZeta]\"\>",
-                   "\[Rule]", "\<\"Zeta\"\>"}], ",", RowBox[{"\<\"\[CapitalEta]\"\>", "\[Rule]",
-                   "\<\"Eta\"\>"}], ",", RowBox[{"\<\"\[CapitalTheta]\"\>", "\[Rule]", 
-                  "\<\"Theta\"\>"}], ",", RowBox[{"\<\"\[CapitalIota]\"\>", "\[Rule]", 
-                  "\<\"Iota\"\>"}], ",", RowBox[{"\<\"\[CapitalKappa]\"\>", "\[Rule]", 
-                  "\<\"Kappa\"\>"}], ",", RowBox[{"\<\"\[CapitalLambda]\"\>", "\[Rule]",
-                   "\<\"Lambda\"\>"}], ",", RowBox[{"\<\"\[CapitalMu]\"\>", "\[Rule]", 
-                  "\<\"Mu\"\>"}], ",", RowBox[{"\<\"\[CapitalNu]\"\>", "\[Rule]", "\<\"Nu\"\>"
-                  }], ",", RowBox[{"\<\"\[CapitalXi]\"\>", "\[Rule]", "\<\"Xi\"\>"}], ",",
-                   RowBox[{"\<\"\[CapitalOmicron]\"\>", "\[Rule]", "\<\"Omicron\"\>"}],
-                   ",", RowBox[{"\<\"\[CapitalPi]\"\>", "\[Rule]", "\<\"Pi\"\>"}], ",",
-                   RowBox[{"\<\"\[CapitalRho]\"\>", "\[Rule]", "\<\"Rho\"\>"}], ",", RowBox[
-                  {"\<\"\[CapitalSigma]\"\>", "\[Rule]", "\<\"Sigma\"\>"}], ",", RowBox[
-                  {"\<\"\[CapitalTau]\"\>", "\[Rule]", "\<\"Tau\"\>"}], ",", RowBox[{"\<\"\[CapitalUpsilon]\"\>",
-                   "\[Rule]", "\<\"Upsilon\"\>"}], ",", RowBox[{"\<\"\[CapitalPhi]\"\>",
-                   "\[Rule]", "\<\"CurlyPhi\"\>"}], ",", RowBox[{"\<\"\[CapitalChi]\"\>",
-                   "\[Rule]", "\<\"Chi\"\>"}], ",", RowBox[{"\<\"\[CapitalPsi]\"\>", "\[Rule]",
-                   "\<\"Psi\"\>"}], ",", RowBox[{"\<\"\[CapitalOmega]\"\>", "\[Rule]", 
-                  "\<\"Omega\"\>"}]}], "}"}]}], ";", RowBox[{RowBox[{"Private`PythonForm",
-                   "[", RowBox[{"Private`h_", "[", "Private`args__", "]"}], "]"}], ":=",
-                   RowBox[{"Private`np", "<>", RowBox[{"ToLowerCase", "[", RowBox[{"Private`PythonForm",
-                   "[", "Private`h", "]"}], "]"}], "<>", "\<\"(\"\>", "<>", RowBox[{"Private`PythonForm",
-                   "[", "Private`args", "]"}], "<>", "\<\")\"\>"}]}], ";", RowBox[{RowBox[
-                  {"Private`PythonForm", "[", "Private`allOther_", "]"}], ":=", RowBox[
-                  {"StringReplace", "[", RowBox[{RowBox[{"ToString", "[", RowBox[{"Private`allOther",
-                   ",", "FortranForm"}], "]"}], ",", "Private`greekrule"}], "]"}]}], ";",
-                   RowBox[{"Private`result", "=", RowBox[{"StringReplace", "[", RowBox[
-                  {RowBox[{"Private`PythonForm", "[", "Private`expression", "]"}], ",",
-                   "Private`greekrule"}], "]"}]}], ";", RowBox[{"If", "[", RowBox[{"Private`copy",
-                   ",", RowBox[{"CopyToClipboard", "[", "Private`result", "]"}]}], "]"}
-                  ], ";", "Private`result"}]}], "]"}]}]}}, DefaultBaseStyle -> "Column",
-                   GridBoxAlignment -> {"Columns" -> {{Left}}}, GridBoxItemSize -> {"Columns"
-                   -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, {TagBox[TooltipBox[StyleBox[
-                  "\<\" Options\"\>", "InformationRowLabel", StripOnInput -> False], "\"Options\"",
-                   TooltipStyle -> "TextStyling"], Annotation[#, "Options", "Tooltip"]&
-                  ], RowBox[{"{", RowBox[{RowBox[{"Private`NumpyPrefix", "\[Rule]", "\<\"np\"\>"
-                  }], ",", RowBox[{"Private`Copy", "\[Rule]", "False"}]}], "}"}]}, {TagBox[
-                  TooltipBox[StyleBox["\<\" Full Name\"\>", "InformationRowLabel", StripOnInput
-                   -> False], "\"FullName\"", TooltipStyle -> "TextStyling"], Annotation[
-                  #, "FullName", "Tooltip"]&], "\<\"ToPython`ToPython\"\>"}}, AutoDelete
-                   -> False, GridBoxAlignment -> {"Columns" -> {Right, Left}}, GridBoxDividers
-                   -> None, GridBoxItemSize -> {"Columns" -> {Automatic, Automatic}}, GridBoxSpacings
-                   -> {"Columns" -> {Offset[0.27999999999999997`], {Offset[0.5599999999999999
-                  ]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.8
-                  ]}, Offset[0.2]}}], "DialogStyle", StripOnInput -> False], DynamicModuleValues
-                   :> {}]}}, DefaultBaseStyle -> "Column", GridBoxAlignment -> {"Columns"
-                   -> {{Left}}}, GridBoxDividers -> {"Columns" -> {{False}}, "Rows" -> 
-                  {{False}}}, GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" ->
-                   {{Automatic}}}, GridBoxSpacings -> {"Columns" -> {Offset[0.27999999999999997`
-                  ], {Offset[0.5599999999999999]}, Offset[0.27999999999999997`]}, "Rows"
-                   -> {Offset[0.2], {Offset[3.6]}, Offset[0.2]}}], FrameMargins -> 6], 
-                  ""}, {ItemBox[TagBox[ButtonBox[PaneSelectorBox[{False -> DynamicBox[FEPrivate`FrontEndResource[
-                  "FEBitmaps", "UpPointerOpener"]], True -> DynamicBox[FEPrivate`FrontEndResource[
-                  "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[System`InformationDump`mouseOver$$
-                  ]], Alignment -> Left, Appearance -> {"Default" -> None}, ButtonFunction
-                   :> FEPrivate`Set[System`InformationDump`open$$, False], Evaluator ->
-                   Automatic, FrameMargins -> {{9, 0}, {0, 0}}, ImageMargins -> 0, ImageSize
-                   -> Full, Method -> "Preemptive"], EventHandlerTag[{"MouseEntered" :>
-                   FEPrivate`Set[System`InformationDump`mouseOver$$, True], "MouseExited"
-                   :> FEPrivate`Set[System`InformationDump`mouseOver$$, False], Method 
-                  -> "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
-                   BaseStyle -> "InformationTitleBackground", StripOnInput -> False], "\[SpanFromLeft]"
-                  }}, AutoDelete -> False, FrameStyle -> Directive[GrayLevel[0.8], Thickness[
-                  Tiny]], GridBoxAlignment -> {"Columns" -> {Left, Right}, "Rows" -> {{
-                  Center}}}, GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {False,
-                   {True}, False}}, GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows"
-                   -> {{Automatic}}}], "Grid"], False -> TagBox[GridBox[{{ItemBox[PaneBox[
-                  StyleBox["\<\" Symbol\"\>", "InformationTitleText", StripOnInput -> False
-                  ], FrameMargins -> {{4, 0}, {-1, 1}}], BaseStyle -> "InformationTitleBackground",
-                   StripOnInput -> False], ItemBox["\<\"\"\>", BaseStyle -> "InformationTitleBackground",
-                   StripOnInput -> False]}, {ItemBox[PaneBox[StyleBox["\<\"ToPython[expression, NumpyPrefix->\\\"np\\\", Copy->False]\\n\\tconverts Mathematica expression to a Numpy compatible expression. Because Numpy can\\n\\tbe imported in several ways, you can specify the name of the numpy module using the\\n    NumpyPrefix option. The additional option Copy allows you to copy the result to the clipboard\"\>",
-                   "InformationUsageText", StripOnInput -> False, LineSpacing -> {1.5, 
-                  1.5, 3.}], FrameMargins -> {{10, 10}, {8, 10}}], BaseStyle -> "InformationUsageSubtitleBackground",
-                   StripOnInput -> False], ItemBox["\<\"\"\>", BaseStyle -> "InformationUsageSubtitleBackground",
-                   StripOnInput -> False]}, {ItemBox[TagBox[ButtonBox[PaneSelectorBox[{
-                  False -> DynamicBox[FEPrivate`FrontEndResource["FEBitmaps", "DownPointerOpener"
-                  ], ImageSizeCache -> {10., {2., 8.}}], True -> DynamicBox[FEPrivate`FrontEndResource[
-                  "FEBitmaps", "DownPointerOpenerHot"], ImageSizeCache -> {10., {2., 8.
-                  }}]}, Dynamic[System`InformationDump`mouseOver$$]], Alignment -> Left,
-                   Appearance -> {"Default" -> None}, ButtonFunction :> FEPrivate`Set[System`InformationDump`open$$,
-                   True], Evaluator -> Automatic, FrameMargins -> {{9, 0}, {0, 0}}, ImageMargins
-                   -> 0, ImageSize -> Full, Method -> "Preemptive"], EventHandlerTag[{"MouseEntered"
-                   :> FEPrivate`Set[System`InformationDump`mouseOver$$, True], "MouseExited"
-                   :> FEPrivate`Set[System`InformationDump`mouseOver$$, False], Method 
-                  -> "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
-                   BaseStyle -> "InformationTitleBackground", StripOnInput -> False], "\[SpanFromLeft]"
-                  }}, AutoDelete -> False, FrameStyle -> Directive[GrayLevel[0.8], Thickness[
-                  Tiny]], GridBoxAlignment -> {"Columns" -> {Left, Right}, "Rows" -> {{
-                  Center}}}, GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {False,
-                   {True}, False}}, GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows"
-                   -> {{Automatic}}}], "Grid"]}, Dynamic[System`InformationDump`open$$],
-                   BaselinePosition -> Baseline, FrameMargins -> 0, ImageSize -> Automatic
-                  ], DynamicModuleValues :> {}], BaseStyle -> "InformationGridFrame", StripOnInput
-                   -> False], "InformationGridPlain", StripOnInput -> False]
-                ,
-                InformationData[
-                  Association[
-                    "ObjectType" -> "Symbol"
-                    ,
-                    "Usage" -> "ToPython[expression, NumpyPrefix->\"np\", Copy->False]\n\tconverts Mathematica expression to a Numpy compatible expression. Because Numpy can\n\tbe imported in several ways, you can specify the name of the numpy module using the\n    NumpyPrefix option. The additional option Copy allows you to copy the result to the clipboard"
-                      
-                    ,
-                    "Documentation" -> None
-                    ,
-                    "OwnValues" -> None
-                    ,
-                    "UpValues" -> None
-                    ,
-                    "DownValues" ->
-                      Information`InformationValueForm[
-                        DownValues
-                        ,
-                        ToPython`ToPython
-                        ,
-                        {
-                          ToPython`ToPython[Pattern[Private`expression,
-                             Blank[]], OptionsPattern[]] :>
-                            Module[{Private`numpyprefix = OptionValue[
-                              Private`NumpyPrefix], Private`copy = OptionValue[Private`Copy], Private`result,
-                               Private`greekrule, Private`format, Private`PythonForm, Private`np, Private`br,
-                               Private`brackets, Private`a, Private`b, Private`l, Private`m, Private`args
-                              },
-                              If[Private`numpyprefix == "",
-                                Private`np = Private`numpyprefix
-                                ,
-                                Private`np = StringJoin[Private`numpyprefix,
-                                   "."]
-                              ];
-                              Private`format[Pattern[Private`pattern,
-                                 Blank[String]], Pattern[Private`args, BlankSequence[]]] :=
-                                Module[{Private`s},
-                                  Private`s = StringReplace[Private`pattern,
-                                     "numpy." -> Private`np];
-                                  ToString[StringForm[Private`s, Apply[
-                                    Sequence, Map[Private`PythonForm, {Private`args}]]]]
-                                ];
-                              Private`br[Pattern[Private`a, Blank[]]]
-                                 :=
-                                If[Or[AtomQ[Private`a], MemberQ[Private`singleFunctions,
-                                   Head[Private`a]]],
-                                  Private`a
-                                  ,
-                                  Private`brackets[Private`a]
-                                ];
-                              Private`PythonForm[Private`brackets[Pattern[
-                                Private`a, Blank[]]]] := Private`format["(``)", Private`a];
-                              Private`PythonForm[-Pattern[Private`a, 
-                                Blank[]]] := Private`format["-``", Private`br[Private`a]];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                ]] ^ Rational[1, 2]] := Private`format["numpy.sqrt(``)", Private`a];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                ]] / Pattern[Private`b, Blank[]]] := Private`format["`` / ``", Private`br[
-                                Private`a], Private`br[Private`b]];
-                              MessageName[ToPython`ToPython, "hasDerivative"
-                                ] = "Dervatives are not supported";
-                              Private`PythonForm[Derivative[BlankNullSequence[
-                                ]]] :=
-                                (
-                                  Message[MessageName[ToPython`ToPython,
-                                     "hasDerivative"]];
-                                  Abort[]
-                                );
-                              Private`PythonForm[Rational[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := ToString[N[Private`a / Private`b,
-                                 $MachinePrecision], FortranForm];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                Rational]]] := ToString[N[Private`a, $MachinePrecision], FortranForm]
-                                ;
-                              Private`PythonForm[Complex[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["complex(``, ``)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                ]] Pattern[Private`b, BlankSequence[]]] :=
-                                Module[{Private`fs, Private`bl = {Private`b
-                                  }},
-                                  Private`fs = StringRiffle[ConstantArray[
-                                    "``", 1 + Length[Private`bl]], " * "];
-                                  Private`format[Private`fs, Private`br[
-                                    Private`a], Apply[Sequence, Map[Private`br, Private`bl]]]
-                                ];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                ]] + Pattern[Private`b, Blank[]]] := Private`format["`` + ``", Private`a,
-                                 Private`b];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                ]] ^ Pattern[Private`b, Blank[]]] := Private`format["`` ** ``", Private`br[
-                                Private`a], Private`br[Private`b]];
-                              Private`PythonForm[Exp[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["numpy.exp(``)", Private`a];
-                              Private`PythonForm[Max[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["numpy.maximum(`1`, `2`)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[Min[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["numpy.minimum(`1`, `2`)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[Arg[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["numpy.angle(``)", Private`a];
-                              Private`PythonForm[SphericalHarmonicY[Pattern[
-                                Private`l, Blank[]], Pattern[Private`m, Blank[]], Pattern[Private`a, 
-                                Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["special.sph_harm(``, ``, (``) % (2 * numpy.pi), (``) % numpy.pi)",
-                                 Private`m, Private`l, Private`b, Private`a];
-                              Private`PythonForm[Gamma[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["special.gamma(``)", Private`a];
-                              Private`PythonForm[Gamma[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["special.gamma(`1`) * special.gammaincc(`1`, `2`)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[BesselI[0, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.i0(``)", Private`b];
-                              Private`PythonForm[BesselJ[0, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.j0(``)", Private`b];
-                              Private`PythonForm[BesselK[0, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.k0(``)", Private`b];
-                              Private`PythonForm[BesselY[0, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.y0(``)", Private`b];
-                              Private`PythonForm[BesselI[1, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.i1(``)", Private`b];
-                              Private`PythonForm[BesselJ[1, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.j1(``)", Private`b];
-                              Private`PythonForm[BesselK[1, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.k1(``)", Private`b];
-                              Private`PythonForm[BesselY[1, Pattern[Private`b,
-                                 Blank[]]]] := Private`format["special.y1(``)", Private`b];
-                              Private`PythonForm[BesselI[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["special.iv(``, ``)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[BesselJ[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["special.jv(``, ``)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[BesselK[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["special.kn(``, ``)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[BesselY[Pattern[Private`a,
-                                 Blank[]], Pattern[Private`b, Blank[]]]] := Private`format["special.yn(``, ``)",
-                                 Private`a, Private`b];
-                              Private`PythonForm[Csc[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["1 / numpy.sin(``)", Private`a];
-                              Private`PythonForm[Sec[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["1 / numpy.cos(``)", Private`a];
-                              Private`PythonForm[Cot[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["1 / numpy.tan(``)", Private`a];
-                              Private`PythonForm[Csch[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["1 / numpy.sinh(``)", Private`a];
-                              Private`PythonForm[Sech[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["1 / numpy.cosh(``)", Private`a];
-                              Private`PythonForm[Coth[Pattern[Private`a,
-                                 Blank[]]]] := Private`format["1 / numpy.tanh(``)", Private`a];
-                              Private`PythonForm[Pattern[Private`a, Blank[
-                                NumericArray]]] := StringJoin[Private`np, "array(", StringReplace[ToString[
-                                Normal[Private`a]], {"{" -> "[", "}" -> "]"}], ")"];
-                              Private`PythonForm[{Pattern[Private`args,
-                                 BlankSequence[]]}] := StringJoin[Private`np, "array([", StringRiffle[
-                                Map[Private`PythonForm, {Private`args}], ", "], "])"];
-                              Private`PythonForm[Pi] = StringJoin[Private`np,
-                                 "pi"];
-                              Private`PythonForm[E] = StringJoin[Private`np,
-                                 "e"];
-                              Private`greekrule = {"\[Alpha]" -> "alpha",
-                                 "\[Beta]" -> "beta", "\[Gamma]" -> "gamma", "\[Delta]" -> "delta", "\[CurlyEpsilon]"
-                                 -> "curlyepsilon", "\[Zeta]" -> "zeta", "\[Eta]" -> "eta", "\[Theta]"
-                                 -> "theta", "\[Iota]" -> "iota", "\[Kappa]" -> "kappa", "\[Lambda]" 
-                                -> "lambda", "\[Mu]" -> "mu", "\[Nu]" -> "nu", "\[Xi]" -> "xi", "\[Omicron]"
-                                 -> "omicron", "\[Pi]" -> "pi", "\[Rho]" -> "rho", "\[FinalSigma]" ->
-                                 "finalsigma", "\[Sigma]" -> "sigma", "\[Tau]" -> "tau", "\[Upsilon]"
-                                 -> "upsilon", "\[CurlyPhi]" -> "curlyphi", "\[Chi]" -> "chi", "\[Phi]"
-                                 -> "phi", "\[Psi]" -> "psi", "\[Omega]" -> "omega", "\[CapitalAlpha]"
-                                 -> "Alpha", "\[CapitalBeta]" -> "Beta", "\[CapitalGamma]" -> "Gamma",
-                                 "\[CapitalDelta]" -> "Delta", "\[CapitalEpsilon]" -> "CurlyEpsilon",
-                                 "\[CapitalZeta]" -> "Zeta", "\[CapitalEta]" -> "Eta", "\[CapitalTheta]"
-                                 -> "Theta", "\[CapitalIota]" -> "Iota", "\[CapitalKappa]" -> "Kappa",
-                                 "\[CapitalLambda]" -> "Lambda", "\[CapitalMu]" -> "Mu", "\[CapitalNu]"
-                                 -> "Nu", "\[CapitalXi]" -> "Xi", "\[CapitalOmicron]" -> "Omicron", "\[CapitalPi]"
-                                 -> "Pi", "\[CapitalRho]" -> "Rho", "\[CapitalSigma]" -> "Sigma", "\[CapitalTau]"
-                                 -> "Tau", "\[CapitalUpsilon]" -> "Upsilon", "\[CapitalPhi]" -> "CurlyPhi",
-                                 "\[CapitalChi]" -> "Chi", "\[CapitalPsi]" -> "Psi", "\[CapitalOmega]"
-                                 -> "Omega"};
-                              Private`PythonForm[Pattern[Private`h, Blank[
-                                ]][Pattern[Private`args, BlankSequence[]]]] := StringJoin[Private`np,
-                                 ToLowerCase[Private`PythonForm[Private`h]], "(", Private`PythonForm[
-                                Private`args], ")"];
-                              Private`PythonForm[Pattern[Private`allOther,
-                                 Blank[]]] := StringReplace[ToString[Private`allOther, FortranForm], 
-                                Private`greekrule];
-                              Private`result = StringReplace[Private`PythonForm[
-                                Private`expression], Private`greekrule];
-                              If[Private`copy,
-                                CopyToClipboard[Private`result]
-                              ];
-                              Private`result
-                            ]
-                        }
-                      ]
-                    ,
-                    "SubValues" -> None
-                    ,
-                    "DefaultValues" -> None
-                    ,
-                    "NValues" -> None
-                    ,
-                    "FormatValues" -> None
-                    ,
-                    "Options" -> {Private`NumpyPrefix -> "np", Private`Copy
-                       -> False}
-                    ,
-                    "Attributes" -> {}
-                    ,
-                    "FullName" -> "ToPython`ToPython"
-                  ]
-                  ,
-                  False
-                ]
-              ]
-            ]
-            ,
-            "Output"
-            ,
-            CellChangeTimes -> {{3.846041131188478*^9, 3.846041134941896*^9
-              }, 3.846041288348984*^9, 3.846041712356203*^9, {3.846041742478557*^9,
-               3.846041755771311*^9}, 3.846041872618247*^9, 3.8460423457875566`*^9,
-               3.846408124469769*^9, 3.8464082522938833`*^9}
-            ,
-            CellLabel -> "Out[48]="
-            ,
-            ExpressionUUID -> "42c28b92-2b81-493e-bb74-e25330a1fff5"
-          ]
-        }
-        ,
-        Open
-      ]
-    ]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", " ", "Numbers",
-       " ", "*)"}], "\[IndentingNewLine]", RowBox[{RowBox[{"ToPython", "[",
-       RowBox[{"1", "/", "2"}], "]"}], "\[IndentingNewLine]", RowBox[{"ToPython",
-       "[", RowBox[{"1", "/", "3"}], "]"}]}]}]], "Input", CellChangeTimes ->
-       {{3.846041020933352*^9, 3.8460410297347317`*^9}, {3.846041760995372*^9,
-       3.846041764297275*^9}, {3.846041864881761*^9, 3.846041865835989*^9}},
-       CellLabel -> "In[50]:=", ExpressionUUID -> "d17288e2-6b59-4b37-b3ab-c96969989f11"
-      ], Cell[BoxData["\<\"0.5\"\>"], "Output", CellChangeTimes -> {{3.846041025718354*^9,
-       3.8460410689851227`*^9}, 3.846041161606009*^9, 3.846041713588273*^9,
-       {3.8460417559319*^9, 3.846041768151883*^9}, 3.846041872624201*^9, 3.846042345795823*^9,
-       3.846408252327827*^9}, CellLabel -> "Out[50]=", ExpressionUUID -> "a735febf-e560-43bd-bd6d-f914d64a4827"
-      ], Cell[BoxData["\<\"0.3333333333333333\"\>"], "Output", CellChangeTimes
-       -> {{3.846041025718354*^9, 3.8460410689851227`*^9}, 3.846041161606009*^9,
-       3.846041713588273*^9, {3.8460417559319*^9, 3.846041768151883*^9}, 3.846041872624201*^9,
-       3.846042345795823*^9, 3.846408252329979*^9}, CellLabel -> "Out[51]=",
-       ExpressionUUID -> "acd027db-6e0c-4cf4-b716-fb0f2df127e2"]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{"Expression",
-       " ", "examples"}], "*)"}], "\[IndentingNewLine]", RowBox[{RowBox[{"ToPython",
-       "[", RowBox[{"a", "+", "b"}], "]"}], "\[IndentingNewLine]", RowBox[{
-      "ToPython", "[", RowBox[{"a", "*", "b", "*", "c"}], "]"}], "\[IndentingNewLine]",
-       RowBox[{"ToPython", "[", RowBox[{"a", "/", "b"}], "]"}], "\[IndentingNewLine]",
-       RowBox[{"ToPython", "[", RowBox[{RowBox[{"(", RowBox[{"a", "+", "b"}
-      ], ")"}], "/", RowBox[{"(", RowBox[{"d", "+", "e", "+", "g"}], ")"}]}
-      ], "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[", RowBox[{RowBox[
-      {"(", RowBox[{"a", "+", "b"}], ")"}], "^", RowBox[{"(", RowBox[{"d", 
-      "+", "e", "+", "g"}], ")"}]}], "]"}], "\[IndentingNewLine]", RowBox[{
-      "ToPython", "[", RowBox[{"Exp", "[", RowBox[{"a", "+", "b"}], "]"}], 
-      "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[", RowBox[{RowBox[
-      {"Sin", "[", RowBox[{"(", RowBox[{"a", "+", "b"}], ")"}], "]"}], "/",
-       RowBox[{"Cos", "[", RowBox[{"d", "+", "e"}], "]"}]}], "]"}], "\[IndentingNewLine]",
-       RowBox[{"ToPython", "[", RowBox[{RowBox[{"Sin", "[", RowBox[{"(", RowBox[
-      {"a", "+", "b"}], ")"}], "]"}], "/", RowBox[{"Tanh", "[", RowBox[{"d",
-       "+", "e"}], "]"}]}], "]"}], "\[IndentingNewLine]", RowBox[{"ToPython",
-       "[", RowBox[{"\[Pi]", " ", RowBox[{"Cosh", "[", "a", "]"}]}], "]"}],
-       "\[IndentingNewLine]", RowBox[{"ToPython", "[", RowBox[{"Log10", "[",
-       "x", "]"}], "]"}]}]}]], "Input", CellChangeTimes -> {{3.817007935108295*^9,
-       3.817007961051466*^9}, {3.8170418609071417`*^9, 3.817041872218865*^9
-      }, {3.82438092026691*^9, 3.824380924710678*^9}, {3.824381208382967*^9,
-       3.824381214615004*^9}}, CellLabel -> "In[52]:=", ExpressionUUID -> "740923fd-dd9e-45ca-b781-36fcddb044a7"
-      ], Cell[BoxData["\<\"a + b\"\>"], "Output", CellChangeTimes -> {3.834824967993429*^9,
-       {3.8348250027856007`*^9, 3.834825025761455*^9}, 3.834825082517449*^9,
-       {3.834825113694745*^9, 3.834825131170567*^9}, 3.834825254557303*^9, 
-      3.834825365719318*^9, {3.8348254306713133`*^9, 3.834825457504114*^9},
-       3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9, 3.8460410406669703`*^9
-      }, 3.8460418726579113`*^9, 3.846042345821651*^9, 3.846408252358556*^9
-      }, CellLabel -> "Out[52]=", ExpressionUUID -> "88214388-71e3-462b-a5be-66420571aab7"
-      ], Cell[BoxData["\<\"a * b * c\"\>"], "Output", CellChangeTimes -> {3.834824967993429*^9,
-       {3.8348250027856007`*^9, 3.834825025761455*^9}, 3.834825082517449*^9,
-       {3.834825113694745*^9, 3.834825131170567*^9}, 3.834825254557303*^9, 
-      3.834825365719318*^9, {3.8348254306713133`*^9, 3.834825457504114*^9},
-       3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9, 3.8460410406669703`*^9
-      }, 3.8460418726579113`*^9, 3.846042345821651*^9, 3.846408252359899*^9
-      }, CellLabel -> "Out[53]=", ExpressionUUID -> "0023fa9a-51c8-4c11-b552-d32e67f3707f"
-      ], Cell[BoxData["\<\"a / b\"\>"], "Output", CellChangeTimes -> {3.834824967993429*^9,
-       {3.8348250027856007`*^9, 3.834825025761455*^9}, 3.834825082517449*^9,
-       {3.834825113694745*^9, 3.834825131170567*^9}, 3.834825254557303*^9, 
-      3.834825365719318*^9, {3.8348254306713133`*^9, 3.834825457504114*^9},
-       3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9, 3.8460410406669703`*^9
-      }, 3.8460418726579113`*^9, 3.846042345821651*^9, 3.8464082523613157`*^9
-      }, CellLabel -> "Out[54]=", ExpressionUUID -> "4273074a-af87-41ce-9cc6-ae203b991c32"
-      ], Cell[BoxData["\<\"(a + b) / (d + e + g)\"\>"], "Output", CellChangeTimes
-       -> {3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9
-      }, 3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9},
-       3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.846408252362858*^9}, CellLabel -> "Out[55]=", ExpressionUUID -> "bb9155fa-3227-43c3-a10a-f5d16b7cd372"
-      ], Cell[BoxData["\<\"(a + b) ** (d + e + g)\"\>"], "Output", CellChangeTimes
-       -> {3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9
-      }, 3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9},
-       3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.846408252364133*^9}, CellLabel -> "Out[56]=", ExpressionUUID -> "d7158797-1d4f-401d-bb64-c29b2496c672"
-      ], Cell[BoxData["\<\"np.exp(a + b)\"\>"], "Output", CellChangeTimes ->
-       {3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9
-      }, 3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9},
-       3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.84640825236545*^9}, CellLabel -> "Out[57]=", ExpressionUUID -> "e81953d6-e02b-4b0e-b543-bad8760a8b3b"
-      ], Cell[BoxData["\<\"(1 / np.cos(d + e)) * np.sin(a + b)\"\>"], "Output",
-       CellChangeTimes -> {3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9
-      }, 3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9},
-       3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.846408252366715*^9}, CellLabel -> "Out[58]=", ExpressionUUID -> "9a3c9c1d-3be9-4fb8-9a18-14e65e057788"
-      ], Cell[BoxData["\<\"(1 / np.tanh(d + e)) * np.sin(a + b)\"\>"], "Output",
-       CellChangeTimes -> {3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9
-      }, 3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9},
-       3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.846408252368518*^9}, CellLabel -> "Out[59]=", ExpressionUUID -> "e6d1f67c-7b2c-46c4-b5c9-122bbd12864b"
-      ], Cell[BoxData["\<\"np.pi * np.cosh(a)\"\>"], "Output", CellChangeTimes
-       -> {3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9
-      }, 3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9},
-       3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.8464082523698797`*^9}, CellLabel -> "Out[60]=", ExpressionUUID -> 
-      "f275590b-eaf0-4e44-b675-c92fb2ebc858"], Cell[BoxData["\<\"np.log(x) / np.log(10)\"\>"
-      ], "Output", CellChangeTimes -> {3.834824967993429*^9, {3.8348250027856007`*^9,
-       3.834825025761455*^9}, 3.834825082517449*^9, {3.834825113694745*^9, 
-      3.834825131170567*^9}, 3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9,
-       3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {3.84604101911229*^9,
-       3.8460410406669703`*^9}, 3.8460418726579113`*^9, 3.846042345821651*^9,
-       3.846408252371305*^9}, CellLabel -> "Out[61]=", ExpressionUUID -> "caf70baa-78be-4c50-8a77-f181a689e36f"
-      ]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{"Expression",
-       " ", "with", " ", "greek", " ", "letters"}], "*)"}], "\[IndentingNewLine]",
-       RowBox[{"ToPython", "[", RowBox[{"Sin", "[", RowBox[{"\[Alpha]", "+",
-       "\[Beta]"}], "]"}], "]"}]}]], "Input", CellChangeTimes -> {{3.817007935108295*^9,
-       3.817007961051466*^9}, {3.817020691587697*^9, 3.817020708510957*^9},
-       3.817041875624913*^9}, CellLabel -> "In[62]:=", ExpressionUUID -> "d695df00-d1d2-4318-b649-f671d424864e"
-      ], Cell[BoxData["\<\"np.sin(alpha + beta)\"\>"], "Output", CellChangeTimes
-       -> {{3.834825430723674*^9, 3.834825457528077*^9}, 3.8348254947234497`*^9,
-       3.8348256558938103`*^9, 3.8460418726745653`*^9, 3.846042345838647*^9,
-       3.846408252378503*^9}, CellLabel -> "Out[62]=", ExpressionUUID -> "36ad64db-329f-490b-b04e-505146c262de"
-      ]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{"Numeric",
-       " ", "examples"}], "*)"}], "\[IndentingNewLine]", RowBox[{RowBox[{"ToPython",
-       "[", "2", "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[", RowBox[
-      {"1", "/", "3"}], "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[",
-       RowBox[{"1.0", "/", "3"}], "]"}], "\[IndentingNewLine]", RowBox[{"ToPython",
-       "[", "2.31", "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[", 
-      RowBox[{"2.31", "+", RowBox[{"5.3", "I"}]}], "]"}]}]}]], "Input", CellChangeTimes
-       -> {{3.817007935108295*^9, 3.817007961051466*^9}, {3.817020691587697*^9,
-       3.817020708510957*^9}, {3.817041939215971*^9, 3.817041941599523*^9}},
-       CellLabel -> "In[63]:=", ExpressionUUID -> "5185dd86-dec4-4c26-8e48-124321882ccc"
-      ], Cell[BoxData["\<\"2\"\>"], "Output", CellChangeTimes -> {{3.8348254307300167`*^9,
-       3.834825457566633*^9}, 3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9,
-       3.8460423458778563`*^9, 3.846408252420711*^9}, CellLabel -> "Out[63]=",
-       ExpressionUUID -> "34ff0311-ced8-4ed5-9f19-3c5c313b48f6"], Cell[BoxData[
-      "\<\"0.3333333333333333\"\>"], "Output", CellChangeTimes -> {{3.8348254307300167`*^9,
-       3.834825457566633*^9}, 3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9,
-       3.8460423458778563`*^9, 3.846408252422104*^9}, CellLabel -> "Out[64]=",
-       ExpressionUUID -> "ff1f2ab9-65bf-440e-b271-3b059595e619"], Cell[BoxData[
-      "\<\"0.3333333333333333\"\>"], "Output", CellChangeTimes -> {{3.8348254307300167`*^9,
-       3.834825457566633*^9}, 3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9,
-       3.8460423458778563`*^9, 3.846408252423403*^9}, CellLabel -> "Out[65]=",
-       ExpressionUUID -> "6fc6c7d0-110c-40e4-8004-48f597b8237b"], Cell[BoxData[
-      "\<\"2.31\"\>"], "Output", CellChangeTimes -> {{3.8348254307300167`*^9,
-       3.834825457566633*^9}, 3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9,
-       3.8460423458778563`*^9, 3.846408252424692*^9}, CellLabel -> "Out[66]=",
-       ExpressionUUID -> "5eba5c6f-d861-48ec-a19b-61235d4295b0"], Cell[BoxData[
-      "\<\"complex(2.31, 5.3)\"\>"], "Output", CellChangeTimes -> {{3.8348254307300167`*^9,
-       3.834825457566633*^9}, 3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9,
-       3.8460423458778563`*^9, 3.846408252426001*^9}, CellLabel -> "Out[67]=",
-       ExpressionUUID -> "663903c8-b170-4217-9afb-bef9f743e2c2"]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{"Array",
-       " ", "handling"}], "*)"}], "\[IndentingNewLine]", RowBox[{RowBox[{"ToPython",
-       "[", RowBox[{"{", RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], "\[IndentingNewLine]",
-       RowBox[{"ToPython", "[", RowBox[{"{", RowBox[{"{", RowBox[{"1", ",",
-       "2", ",", "3"}], "}"}], "}"}], "]"}], "\[IndentingNewLine]", RowBox[
-      {"ToPython", "[", RowBox[{"Cos", "[", RowBox[{"{", RowBox[{"1", ",", 
-      "2", ",", "3"}], "}"}], "]"}], "]"}]}]}]], "Input", CellChangeTimes ->
-       {{3.817007935108295*^9, 3.817007961051466*^9}, {3.817020691587697*^9,
-       3.817020703952483*^9}, {3.817042042716785*^9, 3.817042043976235*^9}},
-       CellLabel -> "In[68]:=", ExpressionUUID -> "292185a9-2fb5-4cee-ba04-979e10b4d536"
-      ], Cell[BoxData["\<\"np.array([1, 2, 3])\"\>"], "Output", CellChangeTimes
-       -> {{3.834825430781938*^9, 3.834825457577856*^9}, 3.834825494779072*^9,
-       3.834825655944306*^9, 3.846041872722941*^9, 3.846042345888381*^9, 3.84640825243394*^9
-      }, CellLabel -> "Out[68]=", ExpressionUUID -> "0112898f-b97d-40ac-bad5-e08df00d59e5"
-      ], Cell[BoxData["\<\"np.array([np.array([1, 2, 3])])\"\>"], "Output",
-       CellChangeTimes -> {{3.834825430781938*^9, 3.834825457577856*^9}, 3.834825494779072*^9,
-       3.834825655944306*^9, 3.846041872722941*^9, 3.846042345888381*^9, 3.846408252436035*^9
-      }, CellLabel -> "Out[69]=", ExpressionUUID -> "2b10b530-5d6c-45a1-a3d1-849cbde2b60f"
-      ], Cell[BoxData["\<\"np.array([np.cos(1), np.cos(2), np.cos(3)])\"\>"
-      ], "Output", CellChangeTimes -> {{3.834825430781938*^9, 3.834825457577856*^9
-      }, 3.834825494779072*^9, 3.834825655944306*^9, 3.846041872722941*^9, 
-      3.846042345888381*^9, 3.8464082524375343`*^9}, CellLabel -> "Out[70]=",
-       ExpressionUUID -> "7147813f-8b02-496b-9047-a3c10754db26"]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{"Example",
-       " ", "with", " ", "numpy", " ", "as", " ", "numpy"}], "*)"}], "\[IndentingNewLine]",
-       RowBox[{RowBox[{"ToPython", "[", RowBox[{RowBox[{"\[Pi]", " ", RowBox[
-      {RowBox[{"Cosh", "[", "a", "]"}], "/", RowBox[{"Sin", "[", "b", "]"}]
-      }]}], ",", RowBox[{"NumpyPrefix", "\[Rule]", " ", "\"\<numpy\>\""}]}],
-       "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[", RowBox[{RowBox[
-      {"Exp", "[", RowBox[{"a", "+", "b"}], "]"}], ",", RowBox[{"NumpyPrefix",
-       "\[Rule]", " ", "\"\<numpy\>\""}]}], "]"}], "\[IndentingNewLine]", RowBox[
-      {"ToPython", "[", RowBox[{RowBox[{"Cos", "[", RowBox[{"{", RowBox[{"1",
-       ",", "2", ",", "3"}], "}"}], "]"}], ",", RowBox[{"NumpyPrefix", "\[Rule]",
-       " ", "\"\<numpy\>\""}]}], "]"}]}]}]], "Input", CellChangeTimes -> {{
-      3.817007935108295*^9, 3.817007961051466*^9}, {3.817020691587697*^9, 3.817020699758286*^9
-      }, {3.817042046873148*^9, 3.817042048134284*^9}, {3.834825479111014*^9,
-       3.834825486108267*^9}}, CellLabel -> "In[71]:=", ExpressionUUID -> "f6527cd2-52e4-49a6-9b6c-bc9c98edc4bd"
-      ], Cell[BoxData["\<\"numpy.pi * numpy.cosh(a) * (1 / numpy.sin(b))\"\>"
-      ], "Output", CellChangeTimes -> {{3.834825430790345*^9, 3.834825457619651*^9
-      }, 3.834825494795306*^9, 3.834825655952808*^9, 3.846041872762762*^9, 
-      3.846042345931856*^9, 3.846408252478046*^9}, CellLabel -> "Out[71]=",
-       ExpressionUUID -> "45383448-7da3-4bb2-aa79-fa57c9eba20f"], Cell[BoxData[
-      "\<\"numpy.exp(a + b)\"\>"], "Output", CellChangeTimes -> {{3.834825430790345*^9,
-       3.834825457619651*^9}, 3.834825494795306*^9, 3.834825655952808*^9, 3.846041872762762*^9,
-       3.846042345931856*^9, 3.846408252479697*^9}, CellLabel -> "Out[72]=",
-       ExpressionUUID -> "2bd16af2-3be7-4a2b-b41f-1c66aca38621"], Cell[BoxData[
-      "\<\"numpy.array([numpy.cos(1), numpy.cos(2), numpy.cos(3)])\"\>"], "Output",
-       CellChangeTimes -> {{3.834825430790345*^9, 3.834825457619651*^9}, 3.834825494795306*^9,
-       3.834825655952808*^9, 3.846041872762762*^9, 3.846042345931856*^9, 3.846408252481016*^9
-      }, CellLabel -> "Out[73]=", ExpressionUUID -> "06fee358-9a64-4080-a1b6-347d5d7f63c8"
-      ]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", RowBox[{"Example",
-       " ", "with", " ", "numpy", " ", "as", " ", "\"\<from numpy import *\>\""
-      }], "*)"}], "\[IndentingNewLine]", RowBox[{RowBox[{"ToPython", "[", RowBox[
-      {RowBox[{"\[Pi]", " ", RowBox[{RowBox[{"Cosh", "[", "a", "]"}], "/", 
-      RowBox[{"Sin", "[", "b", "]"}]}]}], ",", RowBox[{"NumpyPrefix", "\[Rule]",
-       "\"\<\>\""}]}], "]"}], "\[IndentingNewLine]", RowBox[{"ToPython", "[",
-       RowBox[{RowBox[{"Exp", "[", RowBox[{"a", "+", "b"}], "]"}], ",", RowBox[
-      {"NumpyPrefix", "\[Rule]", "\"\<\>\""}]}], "]"}], "\[IndentingNewLine]",
-       RowBox[{"ToPython", "[", RowBox[{RowBox[{"Cos", "[", RowBox[{"{", RowBox[
-      {"1", ",", "2", ",", "3"}], "}"}], "]"}], ",", RowBox[{"NumpyPrefix",
-       "\[Rule]", "\"\<\>\""}]}], "]"}]}]}]], "Input", CellChangeTimes -> {
-      {3.817007935108295*^9, 3.817007961051466*^9}, {3.817020691587697*^9, 
-      3.817020694983716*^9}, {3.846408271620933*^9, 3.8464082821115227`*^9}
-      }, CellLabel -> "In[83]:=", ExpressionUUID -> "5515cb8d-3b4a-4f07-909f-e82f28173e96"
-      ], Cell[BoxData["\<\"pi * cosh(a) * (1 / sin(b))\"\>"], "Output", CellChangeTimes
-       -> {{3.8348254308298597`*^9, 3.8348254576304607`*^9}, 3.834825494839604*^9,
-       3.834825655996907*^9, 3.846041872772156*^9, 3.8460423459407063`*^9, 
-      {3.846408252488163*^9, 3.846408282512183*^9}}, CellLabel -> "Out[83]=",
-       ExpressionUUID -> "240ed9f5-031a-433b-b506-e4041a7c85e9"], Cell[BoxData[
-      "\<\"exp(a + b)\"\>"], "Output", CellChangeTimes -> {{3.8348254308298597`*^9,
-       3.8348254576304607`*^9}, 3.834825494839604*^9, 3.834825655996907*^9,
-       3.846041872772156*^9, 3.8460423459407063`*^9, {3.846408252488163*^9,
-       3.8464082825143633`*^9}}, CellLabel -> "Out[84]=", ExpressionUUID ->
-       "2328c139-66f6-433b-9b3f-558e02b8de97"], Cell[BoxData["\<\"array([cos(1), cos(2), cos(3)])\"\>"
-      ], "Output", CellChangeTimes -> {{3.8348254308298597`*^9, 3.8348254576304607`*^9
-      }, 3.834825494839604*^9, 3.834825655996907*^9, 3.846041872772156*^9, 
-      3.8460423459407063`*^9, {3.846408252488163*^9, 3.846408282516893*^9}},
-       CellLabel -> "Out[85]=", ExpressionUUID -> "738a495d-78bf-4d91-84db-aa6df0d4f9c6"
-      ]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"(*", " ", RowBox[
-      {"Special", " ", "functions"}], " ", "*)"}], "\[IndentingNewLine]", RowBox[
-      {"ToPython", "[", RowBox[{"SphericalHarmonicY", "[", RowBox[{"l", ",",
-       "m", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], "]"}]}]], "Input", CellChangeTimes
-       -> {{3.8171174664415627`*^9, 3.8171175150332823`*^9}}, CellLabel -> 
-      "In[77]:=", ExpressionUUID -> "0e4529e0-9456-4a42-870d-172c1748c68e"],
-       Cell[BoxData["\<\"special.sph_harm(m, l, (phi) % (2 * np.pi), (theta) % np.pi)\"\>"
-      ], "Output", CellChangeTimes -> {{3.8348254308381367`*^9, 3.8348254576675386`*^9
-      }, 3.8348254948487988`*^9, 3.834825656005947*^9, 3.846041872817704*^9,
-       3.846042345983569*^9, 3.846408252528775*^9}, CellLabel -> "Out[77]=",
-       ExpressionUUID -> "4ae6d35d-df52-4700-92a8-95c90f0e39a4"]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{"ToPython", "[", RowBox[
-      {"Sqrt", "[", "a", "]"}], "]"}]], "Input", CellChangeTimes -> {{3.817120078799831*^9,
-       3.817120082942841*^9}}, CellLabel -> "In[78]:=", ExpressionUUID -> "0ae939ea-d5e9-419b-999a-64601c326ce5"
-      ], Cell[BoxData["\<\"np.sqrt(a)\"\>"], "Output", CellChangeTimes -> {
-      {3.834825430844825*^9, 3.8348254576733294`*^9}, 3.834825494889243*^9,
-       3.834825656045374*^9, 3.846041872824448*^9, 3.84604234598946*^9, 3.846408252535535*^9
-      }, CellLabel -> "Out[78]=", ExpressionUUID -> "85a68d86-e2b6-4a71-9623-f36bf1d145f4"
-      ]}, Open]]
-    ,
-    Cell[CellGroupData[{Cell[BoxData[RowBox[{"ToPython", "[", RowBox[
-      {"{", RowBox[{"1", ",", "2", ",", RowBox[{"a", "+", "b", "+", RowBox[
-      {"Sin", "[", "x", "]"}]}]}], "}"}], "]"}]], "Input", CellChangeTimes 
-      -> {{3.8171328786925697`*^9, 3.8171328909644003`*^9}}, CellLabel -> "In[79]:=",
-       ExpressionUUID -> "096db8ac-16bc-4502-968b-388523b12c99"], Cell[BoxData[
-      "\<\"np.array([1, 2, a + b + np.sin(x)])\"\>"], "Output", CellChangeTimes
-       -> {{3.834825430851001*^9, 3.834825457706586*^9}, 3.8348254948948517`*^9,
-       3.83482565605092*^9, 3.846041872873*^9, 3.846042346027454*^9, 3.846408252582428*^9
-      }, CellLabel -> "Out[79]=", ExpressionUUID -> "70a28131-2827-4521-9b2f-3564cb142e37"
-      ]}, Open]]
-  }
-  ,
-  WindowSize -> {808, 701}
-  ,
-  WindowMargins -> {{Automatic, 150}, {Automatic, 131}}
-  ,
-  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (March 13, 2020)"
-    
-  ,
-  StyleDefinitions -> "Default.nb"
-  ,
-  ExpressionUUID -> "798b0806-392b-4800-9dba-1ecc8fa5714a"
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "ToPython"}]], "Input",
+ CellChangeTimes->{{3.70181815383568*^9, 3.7018181578773003`*^9}, 
+   3.701818214459565*^9, {3.817118303280854*^9, 3.817118304890544*^9}, {
+   3.8171204416196833`*^9, 3.8171204422649813`*^9}, {3.846041124797001*^9, 
+   3.846041134384152*^9}},
+ CellLabel->
+  "In[301]:=",ExpressionUUID->"e8858397-83ae-4bb9-9a33-1b677626ef0c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringForm", "string", 
+   "\"String expected at position \
+StandardForm[Short[Shallow[HoldForm[HoldCompleteForm[1]], {10, 50}], 5]] in \
+StandardForm[Short[Shallow[HoldForm[HoldCompleteForm[StringForm[Private`s, \
+Sequence @@ Private`PythonForm /@ {Private`args}]]], {10, 50}], 5]].\"", 2, 
+   301, 104, 20823104423512155750, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{{3.846041131173876*^9, 3.8460411348863487`*^9}, 
+   3.846041288298971*^9, 3.846041712287074*^9, {3.84604174243005*^9, 
+   3.846041755722417*^9}, 3.8460418725700493`*^9, 3.84604234575531*^9, 
+   3.8464081244260674`*^9, 3.846408252278989*^9, 3.994301446663067*^9, 
+   3.994301544091483*^9, 3.994301574123252*^9},
+ CellLabel->
+  "During evaluation of \
+In[301]:=",ExpressionUUID->"b13aa304-ab10-4045-97da-12c4982af46b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"ToPython[expression, NumpyPrefix->\\\"np\\\", \
+Copy->False]\\n    converts Mathematica expression to a Numpy compatible \
+expression. Because Numpy can\\n    be imported in several ways, you can \
+specify the name of the numpy module using the\\n    NumpyPrefix option. The \
+additional option Copy allows you to copy the result to the clipboard\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"ToPython", "[", 
+                    RowBox[{"Private`expression_", ",", 
+                    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Private`numpyprefix", "=", 
+                    
+                    RowBox[{"OptionValue", "[", "Private`NumpyPrefix", 
+                    "]"}]}], ",", 
+                    RowBox[{"Private`copy", "=", 
+                    RowBox[{"OptionValue", "[", "Private`Copy", "]"}]}], ",", 
+                    "Private`result", ",", "Private`greekrule", ",", 
+                    "Private`format", ",", "Private`PythonForm", ",", 
+                    "Private`np", ",", "Private`br", ",", "Private`brackets", 
+                    ",", "Private`a", ",", "Private`b", ",", "Private`l", ",",
+                     "Private`m", ",", "Private`args"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"Private`numpyprefix", "\[Equal]", "\"\""}], ",", 
+                    
+                    RowBox[{"Private`np", "=", "Private`numpyprefix"}], ",", 
+                    RowBox[{"Private`np", "=", 
+                    RowBox[{"Private`numpyprefix", "<>", "\".\""}]}]}], "]"}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"Private`pattern_String", ",", "Private`args__"}],
+                     "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", "Private`s", "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"Private`s", "=", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"Private`pattern", ",", 
+                    RowBox[{"\"numpy.\"", "\[Rule]", "Private`np"}]}], 
+                    "]"}]}], ";", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"StringForm", "[", 
+                    RowBox[{"Private`s", ",", 
+                    RowBox[{"Sequence", "@@", 
+                    RowBox[{"Private`PythonForm", "/@", 
+                    RowBox[{"{", "Private`args", "}"}]}]}]}], "]"}], 
+                    "]"}]}]}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`br", "[", "Private`a_", "]"}], ":=", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"AtomQ", "[", "Private`a", "]"}], "||", 
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"Private`singleFunctions", ",", 
+                    RowBox[{"Head", "[", "Private`a", "]"}]}], "]"}]}], ",", 
+                    "Private`a", ",", 
+                    RowBox[{"Private`brackets", "[", "Private`a", "]"}]}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`brackets", "[", "Private`a_", "]"}], 
+                    "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"(``)\"", ",", "Private`a"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"-", "Private`a_"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"-``\"", ",", 
+                    RowBox[{"Private`br", "[", "Private`a", "]"}]}], "]"}]}], 
+                    ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    SuperscriptBox["Private`a_", 
+                    RowBox[{"Rational", "[", 
+                    RowBox[{"1", ",", "2"}], "]"}]], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"numpy.sqrt(``)\"", ",", "Private`a"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    FractionBox["Private`a_", "Private`b_"], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"`` / ``\"", ",", 
+                    RowBox[{"Private`br", "[", "Private`a", "]"}], ",", 
+                    RowBox[{"Private`br", "[", "Private`b", "]"}]}], "]"}]}], 
+                    ";", 
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"ToPython", "::", "hasDerivative"}], 
+                    "MessageName"], "=", "\"Dervatives are not supported\""}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Derivative", "[", "___", "]"}], "]"}], ":=", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Message", "[", 
+                    StyleBox[
+                    RowBox[{"ToPython", "::", "hasDerivative"}], 
+                    "MessageName"], "]"}], ";", 
+                    RowBox[{"Abort", "[", "]"}]}], ")"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Rational", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{
+                    RowBox[{"N", "[", 
+                    RowBox[{
+                    FractionBox["Private`a", "Private`b"], ",", 
+                    "$MachinePrecision"}], "]"}], ",", "FortranForm"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"Private`PythonForm", "[", "Private`a_Rational", 
+                    "]"}], ":=", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{
+                    RowBox[{"N", "[", 
+                    RowBox[{"Private`a", ",", "$MachinePrecision"}], "]"}], 
+                    ",", "FortranForm"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Complex", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"complex(``, ``)\"", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`a_", " ", "Private`b__"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"Private`fs", ",", 
+                    RowBox[{"Private`bl", "=", 
+                    RowBox[{"{", "Private`b", "}"}]}]}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"Private`fs", "=", 
+                    RowBox[{"StringRiffle", "[", 
+                    RowBox[{
+                    RowBox[{"ConstantArray", "[", 
+                    RowBox[{"\"``\"", ",", 
+                    RowBox[{"1", "+", 
+                    RowBox[{"Length", "[", "Private`bl", "]"}]}]}], "]"}], 
+                    ",", "\" * \""}], "]"}]}], ";", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"Private`fs", ",", 
+                    RowBox[{"Private`br", "[", "Private`a", "]"}], ",", 
+                    RowBox[{"Sequence", "@@", 
+                    RowBox[{"Private`br", "/@", "Private`bl"}]}]}], "]"}]}]}],
+                     "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`a_", "+", "Private`b_"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"`` + ``\"", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    SuperscriptBox["Private`a_", "Private`b_"], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"`` ** ``\"", ",", 
+                    RowBox[{"Private`br", "[", "Private`a", "]"}], ",", 
+                    RowBox[{"Private`br", "[", "Private`b", "]"}]}], "]"}]}], 
+                    ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Exp", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"numpy.exp(``)\"", ",", "Private`a"}], "]"}]}], 
+                    ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Max", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"numpy.maximum(`1`, `2`)\"", ",", "Private`a", 
+                    ",", "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Min", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"numpy.minimum(`1`, `2`)\"", ",", "Private`a", 
+                    ",", "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Arg", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"numpy.angle(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"SphericalHarmonicY", "[", 
+                    
+                    RowBox[{"Private`l_", ",", "Private`m_", ",", 
+                    "Private`a_", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{
+                    "\"special.sph_harm_y(``, ``, (``) % (2 * numpy.pi), (``) \
+% numpy.pi)\"", ",", "Private`l", ",", "Private`m", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Gamma", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.gamma(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Gamma", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{
+                    "\"special.gamma(`1`) * special.gammaincc(`1`, `2`)\"", 
+                    ",", "Private`a", ",", "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselI", "[", 
+                    RowBox[{"0", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.i0(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselJ", "[", 
+                    RowBox[{"0", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.j0(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselK", "[", 
+                    RowBox[{"0", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.k0(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselY", "[", 
+                    RowBox[{"0", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.y0(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselI", "[", 
+                    RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.i1(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselJ", "[", 
+                    RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.j1(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselK", "[", 
+                    RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.k1(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselY", "[", 
+                    RowBox[{"1", ",", "Private`b_"}], "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"special.y1(``)\"", ",", "Private`b"}], "]"}]}],
+                     ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselI", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"special.iv(``, ``)\"", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselJ", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"special.jv(``, ``)\"", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselK", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"special.kn(``, ``)\"", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"BesselY", "[", 
+                    RowBox[{"Private`a_", ",", "Private`b_"}], "]"}], "]"}], 
+                    ":=", 
+                    RowBox[{"Private`format", "[", 
+                    
+                    RowBox[{"\"special.yn(``, ``)\"", ",", "Private`a", ",", 
+                    "Private`b"}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Csc", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"1 / numpy.sin(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Sec", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"1 / numpy.cos(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Cot", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"1 / numpy.tan(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Csch", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"1 / numpy.sinh(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Sech", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"1 / numpy.cosh(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Coth", "[", "Private`a_", "]"}], "]"}], ":=", 
+                    RowBox[{"Private`format", "[", 
+                    RowBox[{"\"1 / numpy.tanh(``)\"", ",", "Private`a"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`rule", ":", 
+                    RowBox[{"(", 
+                    RowBox[{"_Symbol", "\[Rule]", "_"}], ")"}]}], "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    
+                    RowBox[{"Private`rule", "\[LeftDoubleBracket]", "1", 
+                    "\[RightDoubleBracket]"}], "]"}], "<>", "\" = \"", "<>", 
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`rule", "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "]"}], "<>", "\"\\n\""}]}], 
+                    ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`rules", ":", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"_Symbol", "\[Rule]", "_"}], ")"}], ".."}], 
+                    "}"}]}], "]"}], ":=", 
+                    RowBox[{"StringJoin", "[", 
+                    RowBox[{"Private`PythonForm", "/@", "Private`rules"}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"Private`PythonForm", "[", 
+                    "Private`a_NumericArray", "]"}], ":=", 
+                    RowBox[{"Private`np", "<>", "\"array(\"", "<>", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Normal", "[", "Private`a", "]"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"{\"", "\[Rule]", "\"[\""}], ",", 
+                    RowBox[{"\"}\"", "\[Rule]", "\"]\""}]}], "}"}]}], "]"}], 
+                    "<>", "\")\""}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"{", "Private`args__", "}"}], "]"}], ":=", 
+                    RowBox[{"Private`np", "<>", "\"array([\"", "<>", 
+                    RowBox[{"StringRiffle", "[", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "/@", 
+                    RowBox[{"{", "Private`args", "}"}]}], ",", "\", \""}], 
+                    "]"}], "<>", "\"])\""}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", "\[Pi]", "]"}], "=", 
+                    RowBox[{"Private`np", "<>", "\"pi\""}]}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"Private`PythonForm", "[", "\[ExponentialE]", 
+                    "]"}], "=", 
+                    RowBox[{"Private`np", "<>", "\"e\""}]}], ";", 
+                    RowBox[{"Private`greekrule", "=", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"\[Alpha]\"", "\[Rule]", "\"alpha\""}], ",", 
+                    RowBox[{"\"\[Beta]\"", "\[Rule]", "\"beta\""}], ",", 
+                    RowBox[{"\"\[Gamma]\"", "\[Rule]", "\"gamma\""}], ",", 
+                    RowBox[{"\"\[Delta]\"", "\[Rule]", "\"delta\""}], ",", 
+                    RowBox[{"\"\[Epsilon]\"", "\[Rule]", "\"epsilon\""}], ",", 
+                    
+                    RowBox[{"\"\[CurlyEpsilon]\"", "\[Rule]", 
+                    "\"curlyepsilon\""}], ",", 
+                    RowBox[{"\"\[Zeta]\"", "\[Rule]", "\"zeta\""}], ",", 
+                    RowBox[{"\"\[Eta]\"", "\[Rule]", "\"eta\""}], ",", 
+                    RowBox[{"\"\[Theta]\"", "\[Rule]", "\"theta\""}], ",", 
+                    RowBox[{"\"\[Iota]\"", "\[Rule]", "\"iota\""}], ",", 
+                    RowBox[{"\"\[Kappa]\"", "\[Rule]", "\"kappa\""}], ",", 
+                    RowBox[{"\"\[Lambda]\"", "\[Rule]", "\"lambda\""}], ",", 
+                    RowBox[{"\"\[Mu]\"", "\[Rule]", "\"mu\""}], ",", 
+                    RowBox[{"\"\[Nu]\"", "\[Rule]", "\"nu\""}], ",", 
+                    RowBox[{"\"\[Xi]\"", "\[Rule]", "\"xi\""}], ",", 
+                    RowBox[{"\"\[Omicron]\"", "\[Rule]", "\"omicron\""}], ",", 
+                    RowBox[{"\"\[Pi]\"", "\[Rule]", "\"pi\""}], ",", 
+                    RowBox[{"\"\[Rho]\"", "\[Rule]", "\"rho\""}], ",", 
+                    
+                    RowBox[{"\"\[FinalSigma]\"", "\[Rule]", 
+                    "\"finalsigma\""}], ",", 
+                    RowBox[{"\"\[Sigma]\"", "\[Rule]", "\"sigma\""}], ",", 
+                    RowBox[{"\"\[Tau]\"", "\[Rule]", "\"tau\""}], ",", 
+                    RowBox[{"\"\[Upsilon]\"", "\[Rule]", "\"upsilon\""}], ",", 
+                    RowBox[{"\"\[CurlyPhi]\"", "\[Rule]", "\"curlyphi\""}], 
+                    ",", 
+                    RowBox[{"\"\[Chi]\"", "\[Rule]", "\"chi\""}], ",", 
+                    RowBox[{"\"\[Phi]\"", "\[Rule]", "\"phi\""}], ",", 
+                    RowBox[{"\"\[Psi]\"", "\[Rule]", "\"psi\""}], ",", 
+                    RowBox[{"\"\[Omega]\"", "\[Rule]", "\"omega\""}], ",", 
+                    RowBox[{"\"\[CapitalAlpha]\"", "\[Rule]", "\"Alpha\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalBeta]\"", "\[Rule]", "\"Beta\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalGamma]\"", "\[Rule]", "\"Gamma\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalDelta]\"", "\[Rule]", "\"Delta\""}], 
+                    ",", 
+                    
+                    RowBox[{"\"\[CapitalEpsilon]\"", "\[Rule]", 
+                    "\"CurlyEpsilon\""}], ",", 
+                    RowBox[{"\"\[CapitalZeta]\"", "\[Rule]", "\"Zeta\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalEta]\"", "\[Rule]", "\"Eta\""}], ",", 
+                    
+                    RowBox[{"\"\[CapitalTheta]\"", "\[Rule]", "\"Theta\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalIota]\"", "\[Rule]", "\"Iota\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalKappa]\"", "\[Rule]", "\"Kappa\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalLambda]\"", "\[Rule]", "\"Lambda\""}],
+                     ",", 
+                    RowBox[{"\"\[CapitalMu]\"", "\[Rule]", "\"Mu\""}], ",", 
+                    RowBox[{"\"\[CapitalNu]\"", "\[Rule]", "\"Nu\""}], ",", 
+                    RowBox[{"\"\[CapitalXi]\"", "\[Rule]", "\"Xi\""}], ",", 
+                    
+                    RowBox[{"\"\[CapitalOmicron]\"", "\[Rule]", 
+                    "\"Omicron\""}], ",", 
+                    RowBox[{"\"\[CapitalPi]\"", "\[Rule]", "\"Pi\""}], ",", 
+                    RowBox[{"\"\[CapitalRho]\"", "\[Rule]", "\"Rho\""}], ",", 
+                    
+                    RowBox[{"\"\[CapitalSigma]\"", "\[Rule]", "\"Sigma\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalTau]\"", "\[Rule]", "\"Tau\""}], ",", 
+                    
+                    
+                    RowBox[{"\"\[CapitalUpsilon]\"", "\[Rule]", 
+                    "\"Upsilon\""}], ",", 
+                    RowBox[{"\"\[CapitalPhi]\"", "\[Rule]", "\"CurlyPhi\""}], 
+                    ",", 
+                    RowBox[{"\"\[CapitalChi]\"", "\[Rule]", "\"Chi\""}], ",", 
+                    
+                    RowBox[{"\"\[CapitalPsi]\"", "\[Rule]", "\"Psi\""}], ",", 
+                    
+                    RowBox[{"\"\[CapitalOmega]\"", "\[Rule]", "\"Omega\""}]}],
+                     "}"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"Private`PythonForm", "[", 
+                    RowBox[{"Private`h_", "[", "Private`args__", "]"}], "]"}],
+                     ":=", 
+                    RowBox[{"Private`np", "<>", 
+                    RowBox[{"ToLowerCase", "[", 
+                    RowBox[{"Private`PythonForm", "[", "Private`h", "]"}], 
+                    "]"}], "<>", "\"(\"", "<>", 
+                    RowBox[{"Private`PythonForm", "[", "Private`args", "]"}], 
+                    "<>", "\")\""}]}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"Private`PythonForm", "[", "Private`allOther_", 
+                    "]"}], ":=", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Private`allOther", ",", "FortranForm"}], "]"}], 
+                    ",", "Private`greekrule"}], "]"}]}], ";", 
+                    RowBox[{"Private`result", "=", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"Private`PythonForm", "[", "Private`expression", 
+                    "]"}], ",", "Private`greekrule"}], "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"Private`copy", ",", 
+                    RowBox[{"CopyToClipboard", "[", "Private`result", "]"}]}],
+                     "]"}], ";", "Private`result"}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Private`NumpyPrefix", "\[Rule]", "\<\"np\"\>"}], 
+                    ",", 
+                    RowBox[{"Private`Copy", "\[Rule]", "False"}]}], "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"ToPython`ToPython\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          LightDarkSwitched[
+           GrayLevel[0.8]], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"ToPython[expression, NumpyPrefix->\\\"np\\\", \
+Copy->False]\\n    converts Mathematica expression to a Numpy compatible \
+expression. Because Numpy can\\n    be imported in several ways, you can \
+specify the name of the numpy module using the\\n    NumpyPrefix option. The \
+additional option Copy allows you to copy the result to the clipboard\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {1.143798828125, 8.856201171875}}], True->
+              
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {1.143798828125, 8.856201171875}}]}, 
+              Dynamic[System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          LightDarkSwitched[
+           GrayLevel[0.8]], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "ToPython[expression, NumpyPrefix->\"np\", Copy->False]\n    converts \
+Mathematica expression to a Numpy compatible expression. Because Numpy can\n  \
+  be imported in several ways, you can specify the name of the numpy module \
+using the\n    NumpyPrefix option. The additional option Copy allows you to \
+copy the result to the clipboard", "Documentation" -> None, "OwnValues" -> 
+    None, "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, ToPython`ToPython, {ToPython`ToPython[
+         Pattern[Private`expression, 
+          Blank[]], 
+         OptionsPattern[]] :> 
+       Module[{Private`numpyprefix = OptionValue[Private`NumpyPrefix], 
+          Private`copy = OptionValue[Private`Copy], Private`result, 
+          Private`greekrule, Private`format, Private`PythonForm, Private`np, 
+          Private`br, Private`brackets, Private`a, Private`b, Private`l, 
+          Private`m, Private`args}, 
+         If[Private`numpyprefix == "", Private`np = Private`numpyprefix, 
+           Private`np = Private`numpyprefix <> "."]; Private`format[
+            Pattern[Private`pattern, 
+             Blank[String]], 
+            Pattern[Private`args, 
+             BlankSequence[]]] := 
+          Module[{Private`s}, 
+            Private`s = 
+             StringReplace[Private`pattern, "numpy." -> Private`np]; 
+            ToString[
+              StringForm[Private`s, 
+               Apply[Sequence, 
+                Map[Private`PythonForm, {Private`args}]]]]]; Private`br[
+            Pattern[Private`a, 
+             Blank[]]] := If[
+            Or[
+             AtomQ[Private`a], 
+             MemberQ[Private`singleFunctions, 
+              Head[Private`a]]], Private`a, 
+            Private`brackets[Private`a]]; Private`PythonForm[
+            Private`brackets[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["(``)", Private`a]; 
+         Private`PythonForm[-Pattern[Private`a, 
+              Blank[]]] := Private`format["-``", 
+            Private`br[Private`a]]; Private`PythonForm[Pattern[Private`a, 
+              Blank[]]^Rational[1, 2]] := 
+          Private`format["numpy.sqrt(``)", Private`a]; 
+         Private`PythonForm[Pattern[Private`a, 
+              Blank[]]/Pattern[Private`b, 
+             Blank[]]] := Private`format["`` / ``", 
+            Private`br[Private`a], 
+            Private`br[Private`b]]; 
+         MessageName[ToPython`ToPython, "hasDerivative"] = 
+          "Dervatives are not supported"; Private`PythonForm[
+            Derivative[
+             BlankNullSequence[]]] := (Message[
+             MessageName[ToPython`ToPython, "hasDerivative"]]; Abort[]); 
+         Private`PythonForm[
+            Rational[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := ToString[
+            N[Private`a/Private`b, $MachinePrecision], FortranForm]; 
+         Private`PythonForm[
+            Pattern[Private`a, 
+             Blank[Rational]]] := ToString[
+            N[Private`a, $MachinePrecision], FortranForm]; 
+         Private`PythonForm[
+            Complex[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["complex(``, ``)", Private`a, Private`b]; 
+         Private`PythonForm[Pattern[Private`a, 
+              Blank[]] Pattern[Private`b, 
+              BlankSequence[]]] := 
+          Module[{Private`fs, Private`bl = {Private`b}}, 
+            Private`fs = StringRiffle[
+               ConstantArray["``", 1 + Length[Private`bl]], " * "]; 
+            Private`format[Private`fs, 
+              Private`br[Private`a], 
+              Apply[Sequence, 
+               Map[Private`br, Private`bl]]]]; 
+         Private`PythonForm[Pattern[Private`a, 
+              Blank[]] + Pattern[Private`b, 
+              Blank[]]] := Private`format["`` + ``", Private`a, Private`b]; 
+         Private`PythonForm[Pattern[Private`a, 
+              Blank[]]^Pattern[Private`b, 
+              Blank[]]] := Private`format["`` ** ``", 
+            Private`br[Private`a], 
+            Private`br[Private`b]]; Private`PythonForm[
+            Exp[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["numpy.exp(``)", Private`a]; 
+         Private`PythonForm[
+            Max[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["numpy.maximum(`1`, `2`)", Private`a, Private`b]; 
+         Private`PythonForm[
+            Min[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["numpy.minimum(`1`, `2`)", Private`a, Private`b]; 
+         Private`PythonForm[
+            Arg[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["numpy.angle(``)", Private`a]; 
+         Private`PythonForm[
+            SphericalHarmonicY[
+             Pattern[Private`l, 
+              Blank[]], 
+             Pattern[Private`m, 
+              Blank[]], 
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format[
+           "special.sph_harm_y(``, ``, (``) % (2 * numpy.pi), (``) % \
+numpy.pi)", Private`l, Private`m, Private`a, Private`b]; Private`PythonForm[
+            Gamma[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["special.gamma(``)", Private`a]; 
+         Private`PythonForm[
+            Gamma[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format[
+           "special.gamma(`1`) * special.gammaincc(`1`, `2`)", Private`a, 
+            Private`b]; Private`PythonForm[
+            BesselI[0, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.i0(``)", Private`b]; 
+         Private`PythonForm[
+            BesselJ[0, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.j0(``)", Private`b]; 
+         Private`PythonForm[
+            BesselK[0, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.k0(``)", Private`b]; 
+         Private`PythonForm[
+            BesselY[0, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.y0(``)", Private`b]; 
+         Private`PythonForm[
+            BesselI[1, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.i1(``)", Private`b]; 
+         Private`PythonForm[
+            BesselJ[1, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.j1(``)", Private`b]; 
+         Private`PythonForm[
+            BesselK[1, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.k1(``)", Private`b]; 
+         Private`PythonForm[
+            BesselY[1, 
+             Pattern[Private`b, 
+              Blank[]]]] := Private`format["special.y1(``)", Private`b]; 
+         Private`PythonForm[
+            BesselI[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["special.iv(``, ``)", Private`a, Private`b]; 
+         Private`PythonForm[
+            BesselJ[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["special.jv(``, ``)", Private`a, Private`b]; 
+         Private`PythonForm[
+            BesselK[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["special.kn(``, ``)", Private`a, Private`b]; 
+         Private`PythonForm[
+            BesselY[
+             Pattern[Private`a, 
+              Blank[]], 
+             Pattern[Private`b, 
+              Blank[]]]] := 
+          Private`format["special.yn(``, ``)", Private`a, Private`b]; 
+         Private`PythonForm[
+            Csc[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["1 / numpy.sin(``)", Private`a]; 
+         Private`PythonForm[
+            Sec[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["1 / numpy.cos(``)", Private`a]; 
+         Private`PythonForm[
+            Cot[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["1 / numpy.tan(``)", Private`a]; 
+         Private`PythonForm[
+            Csch[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["1 / numpy.sinh(``)", Private`a]; 
+         Private`PythonForm[
+            Sech[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["1 / numpy.cosh(``)", Private`a]; 
+         Private`PythonForm[
+            Coth[
+             Pattern[Private`a, 
+              Blank[]]]] := Private`format["1 / numpy.tanh(``)", Private`a]; 
+         Private`PythonForm[
+            Pattern[Private`rule, Blank[Symbol] -> Blank[]]] := ToString[
+             Part[Private`rule, 1]] <> " = " <> Private`PythonForm[
+             Part[Private`rule, 2]] <> "\n"; Private`PythonForm[
+            Pattern[Private`rules, {
+              Repeated[Blank[Symbol] -> Blank[]]}]] := StringJoin[
+            Map[Private`PythonForm, Private`rules]]; Private`PythonForm[
+            Pattern[Private`a, 
+             Blank[NumericArray]]] := 
+          Private`np <> "array(" <> StringReplace[
+             ToString[
+              Normal[Private`a]], {"{" -> "[", "}" -> "]"}] <> ")"; 
+         Private`PythonForm[{
+             Pattern[Private`args, 
+              BlankSequence[]]}] := Private`np <> "array([" <> StringRiffle[
+             Map[Private`PythonForm, {Private`args}], ", "] <> "])"; 
+         Private`PythonForm[Pi] = Private`np <> "pi"; 
+         Private`PythonForm[E] = Private`np <> "e"; 
+         Private`greekrule = {
+           "\[Alpha]" -> "alpha", "\[Beta]" -> "beta", "\[Gamma]" -> "gamma", 
+            "\[Delta]" -> "delta", "\[Epsilon]" -> "epsilon", 
+            "\[CurlyEpsilon]" -> "curlyepsilon", "\[Zeta]" -> "zeta", 
+            "\[Eta]" -> "eta", "\[Theta]" -> "theta", "\[Iota]" -> "iota", 
+            "\[Kappa]" -> "kappa", "\[Lambda]" -> "lambda", "\[Mu]" -> "mu", 
+            "\[Nu]" -> "nu", "\[Xi]" -> "xi", "\[Omicron]" -> "omicron", 
+            "\[Pi]" -> "pi", "\[Rho]" -> "rho", "\[FinalSigma]" -> 
+            "finalsigma", "\[Sigma]" -> "sigma", "\[Tau]" -> "tau", 
+            "\[Upsilon]" -> "upsilon", "\[CurlyPhi]" -> "curlyphi", "\[Chi]" -> 
+            "chi", "\[Phi]" -> "phi", "\[Psi]" -> "psi", "\[Omega]" -> 
+            "omega", "\[CapitalAlpha]" -> "Alpha", "\[CapitalBeta]" -> "Beta",
+             "\[CapitalGamma]" -> "Gamma", "\[CapitalDelta]" -> "Delta", 
+            "\[CapitalEpsilon]" -> "CurlyEpsilon", "\[CapitalZeta]" -> "Zeta",
+             "\[CapitalEta]" -> "Eta", "\[CapitalTheta]" -> "Theta", 
+            "\[CapitalIota]" -> "Iota", "\[CapitalKappa]" -> "Kappa", 
+            "\[CapitalLambda]" -> "Lambda", "\[CapitalMu]" -> "Mu", 
+            "\[CapitalNu]" -> "Nu", "\[CapitalXi]" -> "Xi", 
+            "\[CapitalOmicron]" -> "Omicron", "\[CapitalPi]" -> "Pi", 
+            "\[CapitalRho]" -> "Rho", "\[CapitalSigma]" -> "Sigma", 
+            "\[CapitalTau]" -> "Tau", "\[CapitalUpsilon]" -> "Upsilon", 
+            "\[CapitalPhi]" -> "CurlyPhi", "\[CapitalChi]" -> "Chi", 
+            "\[CapitalPsi]" -> "Psi", "\[CapitalOmega]" -> "Omega"}; 
+         Private`PythonForm[
+            Pattern[Private`h, 
+             Blank[]][
+             Pattern[Private`args, 
+              BlankSequence[]]]] := Private`np <> ToLowerCase[
+             Private`PythonForm[Private`h]] <> "(" <> 
+           Private`PythonForm[Private`args] <> ")"; Private`PythonForm[
+            Pattern[Private`allOther, 
+             Blank[]]] := StringReplace[
+            ToString[Private`allOther, FortranForm], Private`greekrule]; 
+         Private`result = StringReplace[
+            Private`PythonForm[Private`expression], Private`greekrule]; 
+         If[Private`copy, 
+           CopyToClipboard[Private`result]]; Private`result]}], "SubValues" -> 
+    None, "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> {Private`NumpyPrefix -> "np", Private`Copy -> False}, 
+    "Attributes" -> {}, "FullName" -> "ToPython`ToPython"|>, 
+   False]]], "Output",
+ CellChangeTimes->{{3.846041131188478*^9, 3.846041134941896*^9}, 
+   3.846041288348984*^9, 3.846041712356203*^9, {3.846041742478557*^9, 
+   3.846041755771311*^9}, 3.846041872618247*^9, 3.8460423457875566`*^9, 
+   3.846408124469769*^9, 3.8464082522938833`*^9, 3.994301446670141*^9, 
+   3.994301544097919*^9, 3.9943015741295347`*^9},
+ CellLabel->
+  "Out[301]=",ExpressionUUID->"ceafb21a-f9cd-45f8-9734-a98036c59f3b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "Numbers", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ToPython", "[", 
+    RowBox[{"1", "/", "2"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"1", "/", "3"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.846041020933352*^9, 3.8460410297347317`*^9}, {
+  3.846041760995372*^9, 3.846041764297275*^9}, {3.846041864881761*^9, 
+  3.846041865835989*^9}},
+ CellLabel->
+  "In[302]:=",ExpressionUUID->"d17288e2-6b59-4b37-b3ab-c96969989f11"],
+
+Cell[BoxData["\<\"0.5\"\>"], "Output",
+ CellChangeTimes->{{3.846041025718354*^9, 3.8460410689851227`*^9}, 
+   3.846041161606009*^9, 3.846041713588273*^9, {3.8460417559319*^9, 
+   3.846041768151883*^9}, 3.846041872624201*^9, 3.846042345795823*^9, 
+   3.846408252327827*^9, 3.994301446684043*^9, 3.994301544117464*^9, 
+   3.994301574132498*^9},
+ CellLabel->
+  "Out[302]=",ExpressionUUID->"5fd2b081-80c5-4d25-ba8d-17445c6ef8da"],
+
+Cell[BoxData["\<\"0.3333333333333333\"\>"], "Output",
+ CellChangeTimes->{{3.846041025718354*^9, 3.8460410689851227`*^9}, 
+   3.846041161606009*^9, 3.846041713588273*^9, {3.8460417559319*^9, 
+   3.846041768151883*^9}, 3.846041872624201*^9, 3.846042345795823*^9, 
+   3.846408252327827*^9, 3.994301446684043*^9, 3.994301544117464*^9, 
+   3.994301574133087*^9},
+ CellLabel->
+  "Out[303]=",ExpressionUUID->"47c629aa-f3ed-4e6d-a1e6-9efbc6fed8a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Expression", " ", "examples"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ToPython", "[", 
+    RowBox[{"a", "+", "b"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"a", "*", "b", "*", "c"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"a", "/", "b"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "+", "b"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"d", "+", "e", "+", "g"}], ")"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "+", "b"}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"d", "+", "e", "+", "g"}], ")"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"a", "+", "b"}], "]"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"(", 
+       RowBox[{"a", "+", "b"}], ")"}], "]"}], "/", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"d", "+", "e"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"(", 
+       RowBox[{"a", "+", "b"}], ")"}], "]"}], "/", 
+     RowBox[{"Tanh", "[", 
+      RowBox[{"d", "+", "e"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"\[Pi]", " ", 
+     RowBox[{"Cosh", "[", "a", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"Log10", "[", "x", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.817007935108295*^9, 3.817007961051466*^9}, {
+  3.8170418609071417`*^9, 3.817041872218865*^9}, {3.82438092026691*^9, 
+  3.824380924710678*^9}, {3.824381208382967*^9, 3.824381214615004*^9}},
+ CellLabel->
+  "In[304]:=",ExpressionUUID->"740923fd-dd9e-45ca-b781-36fcddb044a7"],
+
+Cell[BoxData["\<\"a + b\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.994301574151113*^9},
+ CellLabel->
+  "Out[304]=",ExpressionUUID->"b7020266-e3ea-4cee-b47e-6bc80184ff5a"],
+
+Cell[BoxData["\<\"a * b * c\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.994301574151689*^9},
+ CellLabel->
+  "Out[305]=",ExpressionUUID->"3648feb4-5ebc-4ae2-9418-787fec48ce83"],
+
+Cell[BoxData["\<\"a / b\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.9943015741521873`*^9},
+ CellLabel->
+  "Out[306]=",ExpressionUUID->"c5795378-5d1d-492f-a5a3-c9eb56dea4b0"],
+
+Cell[BoxData["\<\"(a + b) / (d + e + g)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.994301574152615*^9},
+ CellLabel->
+  "Out[307]=",ExpressionUUID->"20379131-49a6-4d90-ad04-5e2c77cba8cd"],
+
+Cell[BoxData["\<\"(a + b) ** (d + e + g)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.994301574153049*^9},
+ CellLabel->
+  "Out[308]=",ExpressionUUID->"e1438691-a557-451c-ab69-20f3c7303590"],
+
+Cell[BoxData["\<\"np.exp(a + b)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.9943015741534853`*^9},
+ CellLabel->
+  "Out[309]=",ExpressionUUID->"9186fd51-0b92-49ed-853d-3fcb417e6a18"],
+
+Cell[BoxData["\<\"(1 / np.cos(d + e)) * np.sin(a + b)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.994301574153908*^9},
+ CellLabel->
+  "Out[310]=",ExpressionUUID->"fcd1fb0a-9571-4a39-b0a1-4b240160e6b6"],
+
+Cell[BoxData["\<\"(1 / np.tanh(d + e)) * np.sin(a + b)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.9943015741543407`*^9},
+ CellLabel->
+  "Out[311]=",ExpressionUUID->"1d346f44-e0b5-482e-a610-c6c2b3dcde70"],
+
+Cell[BoxData["\<\"np.pi * np.cosh(a)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.994301574154776*^9},
+ CellLabel->
+  "Out[312]=",ExpressionUUID->"49218724-5cd7-4e90-8700-d34285c5bc3f"],
+
+Cell[BoxData["\<\"np.log(x) / np.log(10)\"\>"], "Output",
+ CellChangeTimes->{
+  3.834824967993429*^9, {3.8348250027856007`*^9, 3.834825025761455*^9}, 
+   3.834825082517449*^9, {3.834825113694745*^9, 3.834825131170567*^9}, 
+   3.834825254557303*^9, 3.834825365719318*^9, {3.8348254306713133`*^9, 
+   3.834825457504114*^9}, 3.834825494671575*^9, 3.83482565583664*^9, {
+   3.84604101911229*^9, 3.8460410406669703`*^9}, 3.8460418726579113`*^9, 
+   3.846042345821651*^9, 3.846408252358556*^9, 3.994301446686763*^9, 
+   3.99430154412024*^9, 3.9943015741552153`*^9},
+ CellLabel->
+  "Out[313]=",ExpressionUUID->"a0dcae8f-798e-4ce8-9d79-41194cedb19a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Expression", " ", "with", " ", "greek", " ", "letters"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"ToPython", "[", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"\[Alpha]", "+", "\[Beta]"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.817007935108295*^9, 3.817007961051466*^9}, {
+   3.817020691587697*^9, 3.817020708510957*^9}, 3.817041875624913*^9},
+ CellLabel->
+  "In[314]:=",ExpressionUUID->"d695df00-d1d2-4318-b649-f671d424864e"],
+
+Cell[BoxData["\<\"np.sin(alpha + beta)\"\>"], "Output",
+ CellChangeTimes->{{3.834825430723674*^9, 3.834825457528077*^9}, 
+   3.8348254947234497`*^9, 3.8348256558938103`*^9, 3.8460418726745653`*^9, 
+   3.846042345838647*^9, 3.846408252378503*^9, 3.994301446703343*^9, 
+   3.994301544141141*^9, 3.9943015741589117`*^9},
+ CellLabel->
+  "Out[314]=",ExpressionUUID->"f7525537-eb87-4d60-a81e-9f86d615d0cf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Numeric", " ", "examples"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ToPython", "[", "2", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"1", "/", "3"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"1.0", "/", "3"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", "2.31", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"2.31", "+", 
+     RowBox[{"5.3", "I"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.817007935108295*^9, 3.817007961051466*^9}, {
+  3.817020691587697*^9, 3.817020708510957*^9}, {3.817041939215971*^9, 
+  3.817041941599523*^9}},
+ CellLabel->
+  "In[315]:=",ExpressionUUID->"5185dd86-dec4-4c26-8e48-124321882ccc"],
+
+Cell[BoxData["\<\"2\"\>"], "Output",
+ CellChangeTimes->{{3.8348254307300167`*^9, 3.834825457566633*^9}, 
+   3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9, 
+   3.8460423458778563`*^9, 3.846408252420711*^9, 3.994301446705698*^9, 
+   3.994301544143119*^9, 3.994301574177032*^9},
+ CellLabel->
+  "Out[315]=",ExpressionUUID->"9fe90b86-2a8b-435e-9470-2660cacab322"],
+
+Cell[BoxData["\<\"0.3333333333333333\"\>"], "Output",
+ CellChangeTimes->{{3.8348254307300167`*^9, 3.834825457566633*^9}, 
+   3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9, 
+   3.8460423458778563`*^9, 3.846408252420711*^9, 3.994301446705698*^9, 
+   3.994301544143119*^9, 3.99430157417765*^9},
+ CellLabel->
+  "Out[316]=",ExpressionUUID->"727227c4-8cde-451d-b592-124332ee66e9"],
+
+Cell[BoxData["\<\"0.3333333333333333\"\>"], "Output",
+ CellChangeTimes->{{3.8348254307300167`*^9, 3.834825457566633*^9}, 
+   3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9, 
+   3.8460423458778563`*^9, 3.846408252420711*^9, 3.994301446705698*^9, 
+   3.994301544143119*^9, 3.994301574178129*^9},
+ CellLabel->
+  "Out[317]=",ExpressionUUID->"0318fe78-bdc8-44e8-a332-69b0290c4982"],
+
+Cell[BoxData["\<\"2.31\"\>"], "Output",
+ CellChangeTimes->{{3.8348254307300167`*^9, 3.834825457566633*^9}, 
+   3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9, 
+   3.8460423458778563`*^9, 3.846408252420711*^9, 3.994301446705698*^9, 
+   3.994301544143119*^9, 3.994301574178561*^9},
+ CellLabel->
+  "Out[318]=",ExpressionUUID->"1047bb36-f5ec-40c4-8001-ea80ceb31413"],
+
+Cell[BoxData["\<\"complex(2.31, 5.3)\"\>"], "Output",
+ CellChangeTimes->{{3.8348254307300167`*^9, 3.834825457566633*^9}, 
+   3.834825494730929*^9, 3.834825655900078*^9, 3.846041872712222*^9, 
+   3.8460423458778563`*^9, 3.846408252420711*^9, 3.994301446705698*^9, 
+   3.994301544143119*^9, 3.994301574178979*^9},
+ CellLabel->
+  "Out[319]=",ExpressionUUID->"68d7f80d-7e88-4bea-bf56-22c829683c3c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Array", " ", "handling"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ToPython", "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], "}"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.817007935108295*^9, 3.817007961051466*^9}, {
+  3.817020691587697*^9, 3.817020703952483*^9}, {3.817042042716785*^9, 
+  3.817042043976235*^9}},
+ CellLabel->
+  "In[320]:=",ExpressionUUID->"292185a9-2fb5-4cee-ba04-979e10b4d536"],
+
+Cell[BoxData["\<\"np.array([1, 2, 3])\"\>"], "Output",
+ CellChangeTimes->{{3.834825430781938*^9, 3.834825457577856*^9}, 
+   3.834825494779072*^9, 3.834825655944306*^9, 3.846041872722941*^9, 
+   3.846042345888381*^9, 3.84640825243394*^9, 3.994301446709127*^9, 
+   3.994301544161893*^9, 3.99430157418113*^9},
+ CellLabel->
+  "Out[320]=",ExpressionUUID->"cb44d1bd-9029-4123-b505-434aa21ff374"],
+
+Cell[BoxData["\<\"np.array([np.array([1, 2, 3])])\"\>"], "Output",
+ CellChangeTimes->{{3.834825430781938*^9, 3.834825457577856*^9}, 
+   3.834825494779072*^9, 3.834825655944306*^9, 3.846041872722941*^9, 
+   3.846042345888381*^9, 3.84640825243394*^9, 3.994301446709127*^9, 
+   3.994301544161893*^9, 3.994301574181603*^9},
+ CellLabel->
+  "Out[321]=",ExpressionUUID->"3b3eb53d-123a-4799-9f80-15fe793d60b9"],
+
+Cell[BoxData["\<\"np.array([np.cos(1), np.cos(2), np.cos(3)])\"\>"], "Output",
+ CellChangeTimes->{{3.834825430781938*^9, 3.834825457577856*^9}, 
+   3.834825494779072*^9, 3.834825655944306*^9, 3.846041872722941*^9, 
+   3.846042345888381*^9, 3.84640825243394*^9, 3.994301446709127*^9, 
+   3.994301544161893*^9, 3.994301574182074*^9},
+ CellLabel->
+  "Out[322]=",ExpressionUUID->"3e6ee03a-a24e-4d25-8c8b-c905211016ac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Example", " ", "with", " ", "numpy", " ", "as", " ", "numpy"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"\[Pi]", " ", 
+      RowBox[{
+       RowBox[{"Cosh", "[", "a", "]"}], "/", 
+       RowBox[{"Sin", "[", "b", "]"}]}]}], ",", 
+     RowBox[{"NumpyPrefix", "\[Rule]", " ", "\"\<numpy\>\""}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"a", "+", "b"}], "]"}], ",", 
+     RowBox[{"NumpyPrefix", "\[Rule]", " ", "\"\<numpy\>\""}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], ",", 
+     RowBox[{"NumpyPrefix", "\[Rule]", " ", "\"\<numpy\>\""}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.817007935108295*^9, 3.817007961051466*^9}, {
+  3.817020691587697*^9, 3.817020699758286*^9}, {3.817042046873148*^9, 
+  3.817042048134284*^9}, {3.834825479111014*^9, 3.834825486108267*^9}},
+ CellLabel->
+  "In[323]:=",ExpressionUUID->"f6527cd2-52e4-49a6-9b6c-bc9c98edc4bd"],
+
+Cell[BoxData["\<\"numpy.pi * numpy.cosh(a) * (1 / numpy.sin(b))\"\>"], \
+"Output",
+ CellChangeTimes->{{3.834825430790345*^9, 3.834825457619651*^9}, 
+   3.834825494795306*^9, 3.834825655952808*^9, 3.846041872762762*^9, 
+   3.846042345931856*^9, 3.846408252478046*^9, 3.994301446726572*^9, 
+   3.9943015441678333`*^9, 3.994301574200688*^9},
+ CellLabel->
+  "Out[323]=",ExpressionUUID->"93de318a-76b8-41d5-bdbc-257d961ef050"],
+
+Cell[BoxData["\<\"numpy.exp(a + b)\"\>"], "Output",
+ CellChangeTimes->{{3.834825430790345*^9, 3.834825457619651*^9}, 
+   3.834825494795306*^9, 3.834825655952808*^9, 3.846041872762762*^9, 
+   3.846042345931856*^9, 3.846408252478046*^9, 3.994301446726572*^9, 
+   3.9943015441678333`*^9, 3.994301574201342*^9},
+ CellLabel->
+  "Out[324]=",ExpressionUUID->"d8a5e09e-1fc2-49e8-b929-d4d4e14135be"],
+
+Cell[BoxData["\<\"numpy.array([numpy.cos(1), numpy.cos(2), \
+numpy.cos(3)])\"\>"], "Output",
+ CellChangeTimes->{{3.834825430790345*^9, 3.834825457619651*^9}, 
+   3.834825494795306*^9, 3.834825655952808*^9, 3.846041872762762*^9, 
+   3.846042345931856*^9, 3.846408252478046*^9, 3.994301446726572*^9, 
+   3.9943015441678333`*^9, 3.9943015742018557`*^9},
+ CellLabel->
+  "Out[325]=",ExpressionUUID->"f3f631aa-9e12-48c8-8af7-830292567713"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Example", " ", "with", " ", "numpy", " ", "as", 
+    " ", "\"\<from numpy import *\>\""}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"\[Pi]", " ", 
+      RowBox[{
+       RowBox[{"Cosh", "[", "a", "]"}], "/", 
+       RowBox[{"Sin", "[", "b", "]"}]}]}], ",", 
+     RowBox[{"NumpyPrefix", "\[Rule]", "\"\<\>\""}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"a", "+", "b"}], "]"}], ",", 
+     RowBox[{"NumpyPrefix", "\[Rule]", "\"\<\>\""}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"ToPython", "[", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], ",", 
+     RowBox[{"NumpyPrefix", "\[Rule]", "\"\<\>\""}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.817007935108295*^9, 3.817007961051466*^9}, {
+  3.817020691587697*^9, 3.817020694983716*^9}, {3.846408271620933*^9, 
+  3.8464082821115227`*^9}},
+ CellLabel->
+  "In[326]:=",ExpressionUUID->"5515cb8d-3b4a-4f07-909f-e82f28173e96"],
+
+Cell[BoxData["\<\"pi * cosh(a) * (1 / sin(b))\"\>"], "Output",
+ CellChangeTimes->{{3.8348254308298597`*^9, 3.8348254576304607`*^9}, 
+   3.834825494839604*^9, 3.834825655996907*^9, 3.846041872772156*^9, 
+   3.8460423459407063`*^9, {3.846408252488163*^9, 3.846408282512183*^9}, 
+   3.9943014467301207`*^9, 3.9943015441836433`*^9, 3.994301574204142*^9},
+ CellLabel->
+  "Out[326]=",ExpressionUUID->"86ce1df1-7ecb-4d9b-a633-c87c4556fd58"],
+
+Cell[BoxData["\<\"exp(a + b)\"\>"], "Output",
+ CellChangeTimes->{{3.8348254308298597`*^9, 3.8348254576304607`*^9}, 
+   3.834825494839604*^9, 3.834825655996907*^9, 3.846041872772156*^9, 
+   3.8460423459407063`*^9, {3.846408252488163*^9, 3.846408282512183*^9}, 
+   3.9943014467301207`*^9, 3.9943015441836433`*^9, 3.9943015742048264`*^9},
+ CellLabel->
+  "Out[327]=",ExpressionUUID->"820b3703-908c-488f-b794-6c623f73d0f9"],
+
+Cell[BoxData["\<\"array([cos(1), cos(2), cos(3)])\"\>"], "Output",
+ CellChangeTimes->{{3.8348254308298597`*^9, 3.8348254576304607`*^9}, 
+   3.834825494839604*^9, 3.834825655996907*^9, 3.846041872772156*^9, 
+   3.8460423459407063`*^9, {3.846408252488163*^9, 3.846408282512183*^9}, 
+   3.9943014467301207`*^9, 3.9943015441836433`*^9, 3.9943015742053633`*^9},
+ CellLabel->
+  "Out[328]=",ExpressionUUID->"bab7dcb3-614d-4ae1-80fa-486d6adb22b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Special", " ", "functions"}], " ", "*)"}], "\[IndentingNewLine]", 
+  
+  RowBox[{"ToPython", "[", 
+   RowBox[{"SphericalHarmonicY", "[", 
+    RowBox[{"l", ",", "m", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8171174664415627`*^9, 3.8171175150332823`*^9}},
+ CellLabel->
+  "In[329]:=",ExpressionUUID->"0e4529e0-9456-4a42-870d-172c1748c68e"],
+
+Cell[BoxData["\<\"special.sph_harm_y(l, m, (theta) % (2 * np.pi), (phi) % \
+np.pi)\"\>"], "Output",
+ CellChangeTimes->{{3.8348254308381367`*^9, 3.8348254576675386`*^9}, 
+   3.8348254948487988`*^9, 3.834825656005947*^9, 3.846041872817704*^9, 
+   3.846042345983569*^9, 3.846408252528775*^9, 3.994301446750433*^9, 
+   3.994301544186892*^9, 3.994301574221649*^9},
+ CellLabel->
+  "Out[329]=",ExpressionUUID->"771c7bfc-e5b2-4e01-be30-238927eb4457"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToPython", "[", 
+  RowBox[{"Sqrt", "[", "a", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.817120078799831*^9, 3.817120082942841*^9}},
+ CellLabel->
+  "In[330]:=",ExpressionUUID->"0ae939ea-d5e9-419b-999a-64601c326ce5"],
+
+Cell[BoxData["\<\"np.sqrt(a)\"\>"], "Output",
+ CellChangeTimes->{{3.834825430844825*^9, 3.8348254576733294`*^9}, 
+   3.834825494889243*^9, 3.834825656045374*^9, 3.846041872824448*^9, 
+   3.84604234598946*^9, 3.846408252535535*^9, 3.9943014467526903`*^9, 
+   3.994301544201076*^9, 3.994301574224098*^9},
+ CellLabel->
+  "Out[330]=",ExpressionUUID->"99b3306e-2ff4-43f6-801b-9934b36f9367"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToPython", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", 
+    RowBox[{"a", "+", "b", "+", 
+     RowBox[{"Sin", "[", "x", "]"}]}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8171328786925697`*^9, 3.8171328909644003`*^9}},
+ CellLabel->
+  "In[331]:=",ExpressionUUID->"096db8ac-16bc-4502-968b-388523b12c99"],
+
+Cell[BoxData["\<\"np.array([1, 2, a + b + np.sin(x)])\"\>"], "Output",
+ CellChangeTimes->{{3.834825430851001*^9, 3.834825457706586*^9}, 
+   3.8348254948948517`*^9, 3.83482565605092*^9, 3.846041872873*^9, 
+   3.846042346027454*^9, 3.846408252582428*^9, 3.994301446769889*^9, 
+   3.994301544203268*^9, 3.994301574241096*^9},
+ CellLabel->
+  "Out[331]=",ExpressionUUID->"6cd4dd20-c400-4f63-a433-657b399f17a8"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Deal", " ", "with", " ", "rules"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.994301450079544*^9, 3.9943014580679293`*^9}, {
+  3.994301549361231*^9, 3.994301549989312*^9}},
+ CellLabel->
+  "In[332]:=",ExpressionUUID->"8c39d68f-2e4b-4b6b-a138-333326811fc1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToPython", "[", 
+  RowBox[{"a", "->", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.994301459029539*^9, 3.9943014892968607`*^9}},
+ CellLabel->
+  "In[333]:=",ExpressionUUID->"0da093bf-7435-4929-88a6-05564ab3a05a"],
+
+Cell[BoxData["\<\"a = 1\\n\"\>"], "Output",
+ CellChangeTimes->{{3.994301477783856*^9, 3.994301489601117*^9}, 
+   3.994301544206995*^9, 3.9943015742567043`*^9},
+ CellLabel->
+  "Out[333]=",ExpressionUUID->"cd821417-8751-4d3a-a281-2ea7bb06ed89"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToPython", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "->", "1"}], ",", 
+    RowBox[{"b", "->", 
+     RowBox[{"x", "^", "2"}]}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.994301459029539*^9, 3.9943014892968607`*^9}, {
+  3.9943015589610863`*^9, 3.994301562485276*^9}},
+ CellLabel->
+  "In[334]:=",ExpressionUUID->"8c8bbd99-1a86-4603-8459-9510ab6d251d"],
+
+Cell[BoxData["\<\"a = 1\\nb = x ** 2\\n\"\>"], "Output",
+ CellChangeTimes->{{3.994301562789234*^9, 3.994301574259377*^9}},
+ CellLabel->
+  "Out[334]=",ExpressionUUID->"ca3df125-1012-4672-93bf-8810909d9af2"]
+}, Open  ]]
+},
+WindowSize->{1280, 1387},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"15.0 for Mac OS X ARM (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"798b0806-392b-4800-9dba-1ecc8fa5714a"
 ]
-
 (* End of Notebook Content *)
 
 (* Internal cache information *)
-
 (*CellTagsOutline
 CellTagsIndex->{}
 *)
-
 (*CellTagsIndex
 CellTagsIndex->{}
 *)
-
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 686, 15, 52, "Input",ExpressionUUID->"ee6242fe-5738-42d7-927d-12c3be9f45f8"],
+Cell[554, 20, 690, 16, 49, "Input",ExpressionUUID->"ee6242fe-5738-42d7-927d-12c3be9f45f8"],
 Cell[CellGroupData[{
-Cell[1269, 39, 373, 6, 30, "Input",ExpressionUUID->"e8858397-83ae-4bb9-9a33-1b677626ef0c"],
-Cell[1645, 47, 733, 14, 59, "Message",ExpressionUUID->"8547ffc5-678a-4925-92f6-8ad83246e2a7"],
-Cell[2381, 63, 49118, 1043, 167, "Output",ExpressionUUID->"42c28b92-2b81-493e-bb74-e25330a1fff5"]
+Cell[1269, 40, 377, 7, 29, "Input",ExpressionUUID->"e8858397-83ae-4bb9-9a33-1b677626ef0c"],
+Cell[1649, 49, 858, 17, 42, "Message",ExpressionUUID->"b13aa304-ab10-4045-97da-12c4982af46b"],
+Cell[2510, 68, 50846, 1080, 157, "Output",ExpressionUUID->"ceafb21a-f9cd-45f8-9734-a98036c59f3b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[51536, 1111, 516, 11, 73, "Input",ExpressionUUID->"d17288e2-6b59-4b37-b3ab-c96969989f11"],
-Cell[52055, 1124, 351, 5, 34, "Output",ExpressionUUID->"a735febf-e560-43bd-bd6d-f914d64a4827"],
-Cell[52409, 1131, 366, 5, 34, "Output",ExpressionUUID->"acd027db-6e0c-4cf4-b716-fb0f2df127e2"]
+Cell[53393, 1153, 520, 12, 70, "Input",ExpressionUUID->"d17288e2-6b59-4b37-b3ab-c96969989f11"],
+Cell[53916, 1167, 425, 7, 33, "Output",ExpressionUUID->"5fd2b081-80c5-4d25-ba8d-17445c6ef8da"],
+Cell[54344, 1176, 440, 7, 33, "Output",ExpressionUUID->"47c629aa-f3ed-4e6d-a1e6-9efbc6fed8a7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[52812, 1141, 1924, 50, 241, "Input",ExpressionUUID->"740923fd-dd9e-45ca-b781-36fcddb044a7"],
-Cell[54739, 1193, 550, 8, 34, "Output",ExpressionUUID->"88214388-71e3-462b-a5be-66420571aab7"],
-Cell[55292, 1203, 554, 8, 34, "Output",ExpressionUUID->"0023fa9a-51c8-4c11-b552-d32e67f3707f"],
-Cell[55849, 1213, 552, 8, 34, "Output",ExpressionUUID->"4273074a-af87-41ce-9cc6-ae203b991c32"],
-Cell[56404, 1223, 566, 8, 34, "Output",ExpressionUUID->"bb9155fa-3227-43c3-a10a-f5d16b7cd372"],
-Cell[56973, 1233, 567, 8, 34, "Output",ExpressionUUID->"d7158797-1d4f-401d-bb64-c29b2496c672"],
-Cell[57543, 1243, 557, 8, 34, "Output",ExpressionUUID->"e81953d6-e02b-4b0e-b543-bad8760a8b3b"],
-Cell[58103, 1253, 580, 8, 34, "Output",ExpressionUUID->"9a3c9c1d-3be9-4fb8-9a18-14e65e057788"],
-Cell[58686, 1263, 581, 8, 34, "Output",ExpressionUUID->"e6d1f67c-7b2c-46c4-b5c9-122bbd12864b"],
-Cell[59270, 1273, 565, 8, 34, "Output",ExpressionUUID->"f275590b-eaf0-4e44-b675-c92fb2ebc858"],
-Cell[59838, 1283, 567, 8, 34, "Output",ExpressionUUID->"caf70baa-78be-4c50-8a77-f181a689e36f"]
+Cell[54821, 1188, 1920, 49, 233, "Input",ExpressionUUID->"740923fd-dd9e-45ca-b781-36fcddb044a7"],
+Cell[56744, 1239, 623, 10, 33, "Output",ExpressionUUID->"b7020266-e3ea-4cee-b47e-6bc80184ff5a"],
+Cell[57370, 1251, 627, 10, 33, "Output",ExpressionUUID->"3648feb4-5ebc-4ae2-9418-787fec48ce83"],
+Cell[58000, 1263, 625, 10, 33, "Output",ExpressionUUID->"c5795378-5d1d-492f-a5a3-c9eb56dea4b0"],
+Cell[58628, 1275, 639, 10, 33, "Output",ExpressionUUID->"20379131-49a6-4d90-ad04-5e2c77cba8cd"],
+Cell[59270, 1287, 640, 10, 33, "Output",ExpressionUUID->"e1438691-a557-451c-ab69-20f3c7303590"],
+Cell[59913, 1299, 633, 10, 33, "Output",ExpressionUUID->"9186fd51-0b92-49ed-853d-3fcb417e6a18"],
+Cell[60549, 1311, 653, 10, 33, "Output",ExpressionUUID->"fcd1fb0a-9571-4a39-b0a1-4b240160e6b6"],
+Cell[61205, 1323, 656, 10, 33, "Output",ExpressionUUID->"1d346f44-e0b5-482e-a610-c6c2b3dcde70"],
+Cell[61864, 1335, 636, 10, 33, "Output",ExpressionUUID->"49218724-5cd7-4e90-8700-d34285c5bc3f"],
+Cell[62503, 1347, 642, 10, 33, "Output",ExpressionUUID->"a0dcae8f-798e-4ce8-9d79-41194cedb19a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60442, 1296, 482, 10, 52, "Input",ExpressionUUID->"d695df00-d1d2-4318-b649-f671d424864e"],
-Cell[60927, 1308, 324, 4, 34, "Output",ExpressionUUID->"36ad64db-329f-490b-b04e-505146c262de"]
+Cell[63182, 1362, 486, 11, 49, "Input",ExpressionUUID->"d695df00-d1d2-4318-b649-f671d424864e"],
+Cell[63671, 1375, 400, 6, 33, "Output",ExpressionUUID->"f7525537-eb87-4d60-a81e-9f86d615d0cf"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[61288, 1317, 783, 17, 136, "Input",ExpressionUUID->"5185dd86-dec4-4c26-8e48-124321882ccc"],
-Cell[62074, 1336, 303, 4, 34, "Output",ExpressionUUID->"34ff0311-ced8-4ed5-9f19-3c5c313b48f6"],
-Cell[62380, 1342, 320, 4, 34, "Output",ExpressionUUID->"ff1f2ab9-65bf-440e-b271-3b059595e619"],
-Cell[62703, 1348, 320, 4, 34, "Output",ExpressionUUID->"6fc6c7d0-110c-40e4-8004-48f597b8237b"],
-Cell[63026, 1354, 306, 4, 34, "Output",ExpressionUUID->"5eba5c6f-d861-48ec-a19b-61235d4295b0"],
-Cell[63335, 1360, 320, 4, 34, "Output",ExpressionUUID->"663903c8-b170-4217-9afb-bef9f743e2c2"]
+Cell[64108, 1386, 787, 18, 131, "Input",ExpressionUUID->"5185dd86-dec4-4c26-8e48-124321882ccc"],
+Cell[64898, 1406, 377, 6, 33, "Output",ExpressionUUID->"9fe90b86-2a8b-435e-9470-2660cacab322"],
+Cell[65278, 1414, 393, 6, 33, "Output",ExpressionUUID->"727227c4-8cde-451d-b592-124332ee66e9"],
+Cell[65674, 1422, 394, 6, 33, "Output",ExpressionUUID->"0318fe78-bdc8-44e8-a332-69b0290c4982"],
+Cell[66071, 1430, 380, 6, 33, "Output",ExpressionUUID->"1047bb36-f5ec-40c4-8001-ea80ceb31413"],
+Cell[66454, 1438, 394, 6, 33, "Output",ExpressionUUID->"68d7f80d-7e88-4bea-bf56-22c829683c3c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[63692, 1369, 795, 20, 94, "Input",ExpressionUUID->"292185a9-2fb5-4cee-ba04-979e10b4d536"],
-Cell[64490, 1391, 316, 4, 34, "Output",ExpressionUUID->"0112898f-b97d-40ac-bad5-e08df00d59e5"],
-Cell[64809, 1397, 329, 4, 34, "Output",ExpressionUUID->"2b10b530-5d6c-45a1-a3d1-849cbde2b60f"],
-Cell[65141, 1403, 343, 4, 34, "Output",ExpressionUUID->"7147813f-8b02-496b-9047-a3c10754db26"]
+Cell[66885, 1449, 795, 20, 90, "Input",ExpressionUUID->"292185a9-2fb5-4cee-ba04-979e10b4d536"],
+Cell[67683, 1471, 389, 6, 33, "Output",ExpressionUUID->"cb44d1bd-9029-4123-b505-434aa21ff374"],
+Cell[68075, 1479, 402, 6, 33, "Output",ExpressionUUID->"3b3eb53d-123a-4799-9f80-15fe793d60b9"],
+Cell[68480, 1487, 414, 6, 33, "Output",ExpressionUUID->"3e6ee03a-a24e-4d25-8c8b-c905211016ac"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[65521, 1412, 1185, 30, 94, "Input",ExpressionUUID->"f6527cd2-52e4-49a6-9b6c-bc9c98edc4bd"],
-Cell[66709, 1444, 345, 5, 34, "Output",ExpressionUUID->"45383448-7da3-4bb2-aa79-fa57c9eba20f"],
-Cell[67057, 1451, 314, 4, 34, "Output",ExpressionUUID->"2bd16af2-3be7-4a2b-b41f-1c66aca38621"],
-Cell[67374, 1457, 355, 5, 34, "Output",ExpressionUUID->"06fee358-9a64-4080-a1b6-347d5d7f63c8"]
+Cell[68931, 1498, 1181, 29, 90, "Input",ExpressionUUID->"f6527cd2-52e4-49a6-9b6c-bc9c98edc4bd"],
+Cell[70115, 1529, 421, 7, 33, "Output",ExpressionUUID->"93de318a-76b8-41d5-bdbc-257d961ef050"],
+Cell[70539, 1538, 390, 6, 33, "Output",ExpressionUUID->"d8a5e09e-1fc2-49e8-b929-d4d4e14135be"],
+Cell[70932, 1546, 433, 7, 33, "Output",ExpressionUUID->"f3f631aa-9e12-48c8-8af7-830292567713"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[67766, 1467, 1133, 30, 94, "Input",ExpressionUUID->"5515cb8d-3b4a-4f07-909f-e82f28173e96"],
-Cell[68902, 1499, 355, 4, 34, "Output",ExpressionUUID->"240ed9f5-031a-433b-b506-e4041a7c85e9"],
-Cell[69260, 1505, 340, 4, 34, "Output",ExpressionUUID->"2328c139-66f6-433b-9b3f-558e02b8de97"],
-Cell[69603, 1511, 359, 4, 34, "Output",ExpressionUUID->"738a495d-78bf-4d91-84db-aa6df0d4f9c6"]
+Cell[71402, 1558, 1129, 29, 90, "Input",ExpressionUUID->"5515cb8d-3b4a-4f07-909f-e82f28173e96"],
+Cell[72534, 1589, 433, 6, 33, "Output",ExpressionUUID->"86ce1df1-7ecb-4d9b-a633-c87c4556fd58"],
+Cell[72970, 1597, 418, 6, 33, "Output",ExpressionUUID->"820b3703-908c-488f-b794-6c623f73d0f9"],
+Cell[73391, 1605, 439, 6, 33, "Output",ExpressionUUID->"bab7dcb3-614d-4ae1-80fa-486d6adb22b4"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[69999, 1520, 434, 10, 52, "Input",ExpressionUUID->"0e4529e0-9456-4a42-870d-172c1748c68e"],
-Cell[70436, 1532, 366, 5, 34, "Output",ExpressionUUID->"4ae6d35d-df52-4700-92a8-95c90f0e39a4"]
+Cell[73867, 1616, 438, 11, 49, "Input",ExpressionUUID->"0e4529e0-9456-4a42-870d-172c1748c68e"],
+Cell[74308, 1629, 442, 7, 33, "Output",ExpressionUUID->"771c7bfc-e5b2-4e01-be30-238927eb4457"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[70839, 1542, 237, 4, 30, "Input",ExpressionUUID->"0ae939ea-d5e9-419b-999a-64601c326ce5"],
-Cell[71079, 1548, 309, 4, 34, "Output",ExpressionUUID->"85a68d86-e2b6-4a71-9623-f36bf1d145f4"]
+Cell[74787, 1641, 241, 5, 29, "Input",ExpressionUUID->"0ae939ea-d5e9-419b-999a-64601c326ce5"],
+Cell[75031, 1648, 385, 6, 33, "Output",ExpressionUUID->"99b3306e-2ff4-43f6-801b-9934b36f9367"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71425, 1557, 335, 7, 30, "Input",ExpressionUUID->"096db8ac-16bc-4502-968b-388523b12c99"],
-Cell[71763, 1566, 331, 4, 34, "Output",ExpressionUUID->"70a28131-2827-4521-9b2f-3564cb142e37"]
+Cell[75453, 1659, 339, 8, 29, "Input",ExpressionUUID->"096db8ac-16bc-4502-968b-388523b12c99"],
+Cell[75795, 1669, 405, 6, 33, "Output",ExpressionUUID->"6cd4dd20-c400-4f63-a433-657b399f17a8"]
+}, Open  ]],
+Cell[76215, 1678, 304, 6, 29, "Input",ExpressionUUID->"8c39d68f-2e4b-4b6b-a138-333326811fc1"],
+Cell[CellGroupData[{
+Cell[76544, 1688, 236, 5, 29, "Input",ExpressionUUID->"0da093bf-7435-4929-88a6-05564ab3a05a"],
+Cell[76783, 1695, 242, 4, 53, "Output",ExpressionUUID->"cd821417-8751-4d3a-a281-2ea7bb06ed89"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77062, 1704, 388, 10, 29, "Input",ExpressionUUID->"8c8bbd99-1a86-4603-8459-9510ab6d251d"],
+Cell[77453, 1716, 205, 3, 74, "Output",ExpressionUUID->"ca3df125-1012-4672-93bf-8810909d9af2"]
 }, Open  ]]
 }
 ]
 *)
+
